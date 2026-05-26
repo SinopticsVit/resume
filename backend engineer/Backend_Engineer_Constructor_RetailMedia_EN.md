@@ -1,0 +1,127 @@
+# Vitaly Kurnosenko
+
+**Senior Backend Engineer | Python · FastAPI · AWS & GCP · APIs · IaC · CI/CD · Observability**
+
+**Place of Residence:** Asia (open to relocation)  
+**Phone / Skype:** +86 15601694273  
+**Email:** rikkimortycrypt@gmail.com  
+**Telegram:** @vitaly_kur  
+**Languages:** English — B2 / Upper-Intermediate (fluent spoken and written); Chinese — HSK 4; Russian — native
+
+---
+
+## Professional Summary
+
+Senior engineer with a **strong formal CS background (PhD, mathematical sciences)** and years of **production ownership** across **distributed backends**, **data-heavy services**, and **cloud infrastructure**. Comfortable owning the full path from **API design** and **service boundaries** through **IaC**, **CI/CD**, **runtime operations**, and **incident response**.
+
+Most recent work spans **international e-commerce / fintech** (Yofi — anti-fraud and customer intelligence for **Shopify** merchants, including **Lululemon**) and **AI document / invoice automation** (Sinoptics AI).
+
+Core strengths: **Python** (including **FastAPI** where used), **AWS + GCP**, **API Gateway + Lambda** patterns deployed with **SST/CDK**, **Kubernetes** (GKE, Knative-style services, Helm), **relational + NoSQL** persistence, **Prometheus/Grafana** on telemetry Kubernetes (Helm), and **SLO-minded** operations (structured logging, Slack-driven ops alerts in infra templates, incident participation).
+
+---
+
+
+| Requirement | How your experience maps |
+|-------------|--------------------------|
+| **Python + FastAPI** for web services | **FastAPI** and **Uvicorn** on **GCP** (internal Knative-oriented API gateway service). **FastAPI + Celery + Redis** on **K3S** at Sinoptics. **Python Lambda** layers across multiple **SST**-deployed services (main public API gateway, billing, orders). |
+| **High-load / real-time** | **Telemetry backend**: Knative-style HTTP services, **Go/Gin** and **TypeScript**, documented **HTTP load-generator** tests at **high concurrency** against telemetry endpoints. **Spark** / **Airflow** data plane at scale (see Data Engineer bullets below). |
+| **IaC — CloudFormation / Terraform** | **AWS SAM** (Serverless Application Model) **CloudFormation** stacks for org-wide env + **GitHub Actions** deploy workflows. **VPC** stacks: **CloudFormation** + SAM configs. **GKE hub**: **Helm** plus documented **Terraform** workflow for related infra. **GCP foundation**: **Pulumi** (Python). **Global webhook ingress**: **Pulumi** entrypoint + **GitHub Actions**. **SST + AWS CDK** for Lambda/API stacks (main API gateway, ML gateway). |
+| **CI/CD** (incl. GitHub Actions) | **GitHub Actions** on hub, webhook, and env stacks; Sinoptics and a separate **public AI validation** repo; **AWS CodeBuild + CodeCommit** and **Google Cloud Build** from broader platform work (see DataOps resume). |
+| **Observability** (Prometheus / Grafana in JD) | **Telemetry** repo: **Helm**-based **Prometheus** (community chart) and **Grafana** datasource toward in-cluster Prometheus. **Slack** alert routing parameters in shared **SAM/CloudFormation** env templates. **GCP Cloud Monitoring / Logging**, **AWS X-Ray** on the main serverless API gateway dependency graph. |
+| **MySQL / PostgreSQL, ClickHouse / Athena class** | **PostgreSQL / RDS** (indexing and ops notes in internal custom-portal gateway docs). **MongoDB**, **Redis**, **Neo4j**, **Spanner**, **BigQuery** in Lambda Python layers and dependencies. **Lake / warehouse** patterns: **BigQuery**, **Hudi/Delta**, **BigLake** (Data Engineer section). |
+| **SOA / microservices, API design** | **Many small deployable units**: **API Gateway + Lambda** (SST/CDK), **Pulumi** webhook stack, **Knative** / **kn func** workflow in telemetry documentation, **Helm**-packaged hub service. **OpenAPI-related** Python tooling on the main gateway stack. |
+| **AWS / Azure / GCP** | Deep **AWS** + **GCP**; **Azure** not a primary production cloud in recent roles. |
+| **Cross-functional + English** | **GitBook** docs, consulting product teams on data tooling, stakeholder communication in international teams (per DataOps resume). |
+| **Ad tech (ideal)** | Not classical ad network — **Shopify** merchant surface, internal **billing quota validation** and **billing flags** Lambdas, **ML gateway** (SNS+SQS-triggered Python Lambda routing models, shadow writes to **MongoDB** per internal README). |
+
+---
+
+## Core Skills
+
+| Area | Tools and experience |
+|------|----------------------|
+| **Backend & APIs** | **Python** (Lambda handlers + shared layers), **FastAPI** (GCP portal/Knative-oriented gateway, Sinoptics), **Node.js** / **TypeScript** in **SST** and telemetry codebases, **REST** behind **API Gateway**, **Go/Gin** (telemetry). |
+| **Cloud** | **AWS** (Lambda, API Gateway, S3, SQS/SNS, EventBridge, RDS, Secrets Manager, EC2, ECR, CodeBuild, CodeCommit), **GCP** (GKE, BigQuery, GCS, Cloud Build, Artifact Registry, IAM / Workload Identity, Memorystore Redis notes in gateway docs). |
+| **IaC & config** | **Pulumi (Python)**, **AWS SAM / CloudFormation**, **SST + AWS CDK**, **Helm**, **Terraform** (documented alongside GKE hub). |
+| **Datastores** | **PostgreSQL** (RDS / portal gateway), **MongoDB**, **Redis** (incl. cluster client in layers), **Neo4j**, **Spanner**, **BigQuery**, lakehouse (**Hudi / Delta**, **BigLake**). **MySQL** where used in on-prem / Dify-style deployments (Sinoptics). |
+| **CI/CD & quality gates** | **GitHub Actions** (hub, env stacks, webhook gateway; public side project: tests, Docker, Trivy SARIF), **CodeBuild → ECR → Kubernetes**, **Cloud Build** for data-plane images. |
+| **Orchestration & distributed work** | **Kubernetes (GKE, K3S/Rancher)**, **Airflow** (pod-based tasks on GKE), **Hatchet** on K8s, **n8n** (Sinoptics), **Knative** tooling (kn / kn func in telemetry docs). |
+| **Observability & operations** | **Prometheus + Grafana** (Helm) for telemetry Kubernetes; **Slack** channels wired through **CloudFormation** parameters; structured logging and pipeline alerting (Slack on Airflow — DataOps resume); DR patterns (secrets, encryption, backups). |
+| **E-commerce domain** | **Shopify** integrations (official **Shopify** Python SDK and HMAC validation on main serverless gateway stack), **Lululemon** and enterprise merchant context, webhooks and order/product pipelines. |
+
+---
+
+## Professional Experience
+
+### Backend Engineer/ AI Platform Engineer — Sinoptics AI  
+*October 2025 — May 2026 (remote)*
+
+- Migrated **FastAPI + Celery + Redis** to **K3S (Rancher)** on **bare-metal EC2** (AWS China); **hybrid CI/CD**: **GitHub Actions → CodeCommit → CodeBuild → ECR → kubectl rollout**, secrets in **Secrets Manager**.
+- Ran **on-prem AI stack** (Dify, PostgreSQL, nginx, **Let’s Encrypt**), **Hatchet** workflow engine on **Kubernetes** for **OCR / LLM** workloads.
+- **Layered microservice architecture** (n8n → agents → aggregator) with **RBAC**, encryption, audit logs, **GDPR / CN** compliance awareness.
+
+### Backend Engineer — Yofi Inc. (USA)  
+*February 2022 — October 2025 (remote)* 
+
+Yofi: **anti-fraud / customer intelligence** for **Shopify** merchants (**Lululemon** and others). The bullets below reflect **hands-on work across internal Yofi engineering codebases** (API gateways, billing, orders, telemetry, shared env IaC, GKE hub, GCP foundation — not public repositories).
+
+- **Serverless API surface (AWS)**: primary **SST** + **AWS CDK** stack for **Customer, Order, Installation** HTTP APIs — **API Gateway v2** constructs, **Lambda** (Node.js handlers plus **Python Lambda layer** with boto3, **PyMongo**, **redis-py-cluster**, **Neo4j**, **BigQuery** / **Spanner** / **Firestore** clients, **AWS X-Ray** SDK in the dependency graph).
+- **GCP portal / Knative path**: internal **FastAPI** + **Uvicorn** service with **Kubernetes** Python client, **Google Cloud Spanner**, **Redis** (Memorystore TLS notes in internal docs), **GCP Secret Manager**, **JWT** admin APIs.
+- **Custom portal gateway**: **SST v2** + **AWS CDK Lambda Python** constructs, **Jest** tests; **PostgreSQL / RDS** indexing and tuning notes in internal documentation.
+- **Global webhooks**: **Pulumi** (Python) stack, **just** + **uv** developer workflow, **GitHub Actions** for tests and deploy to **dev/main → AWS**.
+- **Telemetry platform**: backend for telemetry; **Knative** examples, **Go** / **TypeScript** services, container images in **AWS ECR** per internal docs; **Prometheus** (community **Helm** chart) and **Grafana** datasource documentation; **HTTP load-generator** examples against public telemetry URLs.
+- **ML routing**: **SST** + **CDK**; internal README: **SNS + SQS** triggered **Python Lambda** selects model, writes **MongoDB** “shadow” predictions.
+- **Billing controls**: **SST** + **Python Lambda** stacks for quota validation and billing flags; layers use **boto3**, **PyMongo**, **Redis** cluster client, **Spanner** / **Google** libraries where applicable.
+- **Orders**: **SST** + **Python Lambda** for order persistence and state prediction; **PyMongo**, **Gremlin** / graph-related dependencies in order persistence layers.
+- **Shared hub on GKE**: **Helm** chart, **Kubernetes** deployment, **OAuth2** with **Okta** for **Airflow** / **Airbyte**, **GitHub Actions** deploy workflows; documented **Terraform** workflow alongside hub infra.
+- **Org-wide AWS env (IaC)**: large **SAM/CloudFormation** templates (Slack channel/workspace parameters for alerts); **VPC** stacks via **CloudFormation** + **SAM** per internal README.
+- **GCP foundation**: **Pulumi** Python project; **Cloud Run**–style Python sources including **Shopify** webhook handlers wired through **Pub/Sub** in the tree layout.
+- **Data plane at scale** (from production DataOps work): **Spark on Kubernetes**, **Airflow** (~25 prod DAGs), **GCS + BigLake + Hudi/Delta**, pipelines over **1B+** events.
+- **Cross-team**: **GitBook** API docs, **Airflow** pod-task templates, training on **DBT**, **Airbyte**, **Spark** practices.
+
+**Representative stack:** API Gateway, Lambda, SST, AWS CDK, SAM/CloudFormation, Pulumi, Terraform (documented), SQS/SNS, EventBridge, MongoDB, PostgreSQL, Redis, Neo4j, Spanner, BigQuery, Airflow, Spark, GKE, Helm, Docker, Prometheus, Grafana.
+
+### Head of IT and Finance — Engineering Solutions LLC  
+*March 2013 — December 2017*
+
+- Led IT and finance; ERP, reporting, governance — stakeholder management and delivery under business constraints.
+
+### Head of IT Department — New Engineering Solution  
+*April 2003 — February 2013*
+
+- Owned corporate systems and reporting; early data discipline and automation.
+
+---
+
+## Open Source / Personal Templates (proof of patterns)
+
+- **FastAPI on K3S** — **FastAPI + Celery + Postgres + Redis**, **GitHub Actions → CodeBuild → ECR** rollout (public template repo).
+- **Dify on Ubuntu**, **PostgreSQL on cloud VM** — repeatable installs, TLS, backups (public automation repos).
+- **Airflow on GKE** — pod-based Spark/Python jobs, **Cloud Build**, dev/prod separation (public operator/template repo).
+
+---
+
+## Side project — AI company-validation (public repo)
+
+Multi-agent company-validation and **invoice** workflows (**n8n**, Docker Compose, **MongoDB** logging). **GitHub Actions**: **MongoDB + Redis** service containers, **Node + Python** tests, **Docker Compose** build/smoke, **Trivy** SARIF upload, branch-based workflows.
+
+---
+
+## Education
+
+- **Southern Federal University** — PhD, Mathematical Sciences *(September 1994 — May 2003)*  
+- **RPANEPA** — MBA, Information Technology *(September 2005 — May 2007)*
+
+---
+
+## Certifications
+
+- **Certified Accountant Practitioner (CAP)**  
+- Advanced training: **IFRS financial reporting**, **management accounting**
+
+---
+
+## Additional
+
+- Comfortable **remote**, async communication, **English** for design docs and incidents.  
+- Security- and **compliance-aware** delivery (fraud, finance, cross-border data).

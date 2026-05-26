@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DataOps_Engineer_Porokhnya_EN</title>
+  <style>
+    :root {
+      --text: #1a1a1a;
+      --muted: #555;
+      --border: #d0d7de;
+      --accent: #0d47a1;
+      --bg-soft: #f6f8fa;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0 auto;
+      max-width: 210mm;
+      padding: 14mm 16mm 18mm;
+      font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+      font-size: 10.5pt;
+      line-height: 1.45;
+      color: var(--text);
+      background: #fff;
+    }
+    h1 {
+      margin: 0 0 0.35rem;
+      font-size: 1.7rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    h2 {
+      margin: 1.2rem 0 0.45rem;
+      padding-bottom: 0.2rem;
+      font-size: 0.88rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      border-bottom: 1px solid var(--border);
+    }
+    h3 {
+      margin: 0.9rem 0 0.2rem;
+      font-size: 1rem;
+    }
+    p {
+      margin: 0.35rem 0;
+    }
+    .meta-line {
+      margin-top: 0;
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+    ul {
+      margin: 0.25rem 0 0.55rem;
+      padding-left: 1.15rem;
+    }
+    li {
+      margin: 0.18rem 0;
+    }
+    hr {
+      border: 0;
+      border-top: 1px solid var(--border);
+      margin: 0.8rem 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0.4rem 0 0.7rem;
+      font-size: 9.7pt;
+    }
+    th, td {
+      border: 1px solid var(--border);
+      padding: 0.35rem 0.5rem;
+      vertical-align: top;
+      text-align: left;
+    }
+    thead th {
+      background: var(--bg-soft);
+    }
+    tbody th {
+      width: 28%;
+      font-weight: 600;
+      background: #fcfcfc;
+    }
+    code {
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 0.94em;
+    }
+    a {
+      color: inherit;
+    }
+    @page {
+      size: A4;
+      margin: 12mm 14mm 14mm;
+    }
+    @media print {
+      body {
+        padding: 0;
+        max-width: none;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      h2, h3 {
+        break-after: avoid;
+      }
+      ul, table {
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+<h1>Vitaly Kurnosenko</h1>
+<p><strong>DataOps / Big Data Engineer | Kubernetes &amp; Spark | Data Lake | CI/CD | On-prem AI</strong></p>
+<p class="meta-line"><strong>Place of Residence:</strong> Asia (open to relocation to Limassol, Cyprus) &nbsp;·&nbsp; <strong>Phone / Skype:</strong> +86 15601694273 &nbsp;·&nbsp; <strong>Email:</strong> rikkimortycrypt@gmail.com &nbsp;·&nbsp; <strong>WeChat:</strong> porohnya &nbsp;·&nbsp; <strong>Telegram:</strong> @vitaly_kur &nbsp;·&nbsp; <strong>Languages:</strong> English — B2 / Upper-Intermediate, fluent spoken and written; Chinese — HSK 4; Russian — native</p>
+<hr />
+<h2>Professional Summary</h2>
+<p>DataOps / Big Data engineer with hands-on experience operating Kubernetes clusters (GKE and <strong>K3S/Rancher</strong> on bare-metal EC2), running <strong>Spark on Kubernetes</strong>, building Data Lakes on object storage (S3, GCS, Yandex Object Storage), and deploying <strong>on-premise AI infrastructure</strong>. Cover the full lifecycle — capacity planning, networking, security, CI/CD, monitoring, and disaster recovery.</p>
+<p>5+ years on production data platforms in international fintech / e-commerce products (Yofi, USA — anti-fraud for Shopify / Lululemon; Sinoptics AI — on-prem AI for invoice / document processing). Strong in Python and SQL, comfortable maintaining Java/Scala Spark jobs and reading/patching Go services. Linux is my primary production environment.</p>
+<p>Core strengths: physical implementation of Big Data environments, Spark/Hadoop performance tuning, security-by-design (Workload Identity, Secrets Manager, RBAC), incident management, and SLO-grade operational discipline.</p>
+<hr />
+<h2>Core Skills (mapped to the role)</h2>
+<table>
+  <thead>
+    <tr>
+      <th scope="col">Area</th>
+      <th scope="col">Tools and experience</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Containers / Orchestration</th>
+      <td>Docker, containerd, Kubernetes, GKE, <strong>K3S (Rancher)</strong> on bare-metal AWS EC2, Helm, KubernetesPodOperator, Workload Identity, namespaces, RBAC, image pull secrets</td>
+    </tr>
+    <tr>
+      <th scope="row">Big Data &amp; Spark</th>
+      <td><strong>PySpark on Dataproc Serverless / Spark on K8s</strong>, custom Debian-based Spark Docker images, Hudi, Delta Lake, BigLake, Hadoop FS, partitioning, performance tuning</td>
+    </tr>
+    <tr>
+      <th scope="row">Data Lake / Object Storage</th>
+      <td><strong>S3</strong> (AWS, incl. China region), GCS, Yandex Object Storage, BigLake, lakehouse patterns (Hudi/Delta), Trino-class engines (BigQuery, Athena)</td>
+    </tr>
+    <tr>
+      <th scope="row">Languages</th>
+      <td><strong>Python</strong> (PySpark, FastAPI, Airflow, boto3, k8s client), <strong>SQL</strong> (PostgreSQL, BigQuery, Spanner, MSSQL, Trino-style), JavaScript/TypeScript; read and patch <strong>Java/Scala</strong> Spark jobs and <strong>Go</strong> services</td>
+    </tr>
+    <tr>
+      <th scope="row">Linux &amp; networking</th>
+      <td>Ubuntu/Debian, systemd, bash, nginx, certbot/Let's Encrypt, UFW, IPtables, DNS, TLS, jemalloc tuning</td>
+    </tr>
+    <tr>
+      <th scope="row">CI/CD &amp; Automation</th>
+      <td><strong>GitHub Actions</strong>, <strong>AWS CodeCommit + CodeBuild</strong>, Google Cloud Build, <strong>Pulumi (IaC)</strong>, bash deployment scripts in the spirit of Ansible/Chef for PostgreSQL and stack installers, Docker BuildKit</td>
+    </tr>
+    <tr>
+      <th scope="row">Data orchestration</th>
+      <td>Airflow (KubernetesPodOperator pattern), Airbyte, DBT, Hatchet, n8n</td>
+    </tr>
+    <tr>
+      <th scope="row">Security &amp; DR</th>
+      <td>AWS Secrets Manager, GCP Secret Manager, IAM / Workload Identity, RBAC, encryption at-rest / in-transit, automated PostgreSQL backups with retention, Slack alerting on DAG failures</td>
+    </tr>
+    <tr>
+      <th scope="row">Monitoring &amp; Alerting</th>
+      <td>Cloud Logging / Monitoring, Slack webhooks, structured logs, runbook-driven incident response</td>
+    </tr>
+    <tr>
+      <th scope="row">AI infrastructure</th>
+      <td><strong>On-prem Dify</strong> (LLM platform) on Ubuntu VM with Docker Compose, Hatchet workflow engine on K8s, OCR / LLM pipelines, retrieval / agent context</td>
+    </tr>
+  </tbody>
+</table>
+<hr />
+<h2>Professional Experience</h2>
+<h3>DataOps / AI Platform Engineer — Sinoptics AI</h3>
+<p class="meta-line"><em>March 2025 — October 2025 (remote)</em></p>
+<ul>
+  <li>Deployed and operate an <strong>on-premise AI stack</strong> for document (invoice) processing: Dify v1.10 on Ubuntu VM in Yandex Cloud + PostgreSQL, isolated Docker Compose stack, nginx as edge with automatic Let's Encrypt issuance and rotation via certbot.</li>
+  <li>Migrated a FastAPI + Celery / Redis microservice onto a <strong>K3S cluster (Rancher)</strong> on bare-metal AWS EC2 (China region, <code>cn-northwest-1</code>); built a hybrid CI/CD: GitHub Actions → AWS CodeCommit → CodeBuild → ECR → <code>kubectl rollout</code>, with kubeconfig stored in AWS Secrets Manager.</li>
+  <li>Stood up a <strong>Hatchet workflow engine on K8s</strong> (namespace, ingress, external secrets) to orchestrate long-running OCR / LLM tasks; configured pod monitoring and alerting.</li>
+  <li>Implemented automated PostgreSQL deployment and backup on Ubuntu (bash scripts in the style of an Ansible role: package install, <code>pg_hba.conf</code> / <code>postgresql.conf</code> tuning, UFW, 7-day retention backups, cron).</li>
+  <li>Designed a layered document-processing architecture (n8n → specialized AI agents → aggregator → report) with a security model (RBAC, encryption at-rest/in-transit, audit logs, GDPR / Chinese data law compliance).</li>
+</ul>
+<h3>Data Engineer — Yofi Inc. (USA)</h3>
+<p class="meta-line"><em>February 2022 — October 2025</em></p>
+<p><em>Yofi is an anti-fraud / customer-clustering platform for Shopify merchants (Lululemon and others), where I owned the DataOps part of the Big Data stack.</em></p>
+<ul>
+  <li>Operated <strong>GKE clusters</strong> (<code>yofi-hub</code>) across dev/prod GCP projects: configured Workload Identity, image pull secrets for Google Artifact Registry, namespace separation (<code>hub-dev</code> / <code>hub-prod</code>), roles/rolebindings via <code>kubectl apply</code>, context switching, and kubeconfig management.</li>
+  <li>Ran <strong>Spark on Kubernetes</strong> via the <code>KubernetesPodOperator</code> pattern in Airflow + Dataproc Serverless: built custom <strong>Debian 11/12 Docker images</strong> for Spark with Hudi, Delta Lake, MongoDB connector, BigQuery jar, jemalloc memory tuning, conda/mamba and a scientific Python stack.</li>
+  <li>Built a Data Lake layer on <strong>GCS + BigLake + Hudi/Delta</strong> (<code>raffles_to_hudi</code>, <code>mongodb_to_biglake</code>, <code>firestore_to_bq</code>, <code>spanner_to_bigquery</code>, <code>analytics</code> / <code>sessions</code> / <code>stats</code> pipelines); tuned partitioning, IO throughput, and shuffle parameters for jobs spanning 1B+ events.</li>
+  <li>Maintained <strong>Airflow</strong> (~25 production DAGs): a <code>create_kpo_task</code> wrapper around <code>KubernetesPodOperator</code>, Slack alerting on failures, env vars, retry policies, <code>TriggerRule.ALL_DONE</code> for resilient pipelines; CI for pod images via <strong>Google Cloud Build</strong> to Artifact Registry with <code>:latest</code> and <code>:${SHORT_SHA}</code> tags.</li>
+  <li>Owned <strong>infrastructure-as-code</strong> via <strong>Pulumi</strong> (Python) for the base GCP estate: BigQuery, GCS, Cloud Functions, IAM, dev/prod stacks.</li>
+  <li>Integrated the AWS side of the platform: dozens of Lambdas (Node.js / Python) behind API Gateway, SQS/SNS, EventBridge, RDS, Cognito, Neptune, Aurora; CDK batch refresh counters; CloudFormation/CDK for base VPC / Cognito / Secrets / EC2 resources.</li>
+  <li>Implemented <strong>disaster recovery &amp; security</strong>: Secrets Manager, encryption, GCS versioning, idempotent DAGs with persisted state in Redis, Slack alerting and runbooks; participated in incident response for ingestion-pipeline failures.</li>
+  <li>Provided <strong>DataOps consulting</strong> to product teams: API documentation in GitBook, KPO task templates, training on DBT, Airbyte, and Spark best practices.</li>
+</ul>
+<p><strong>Stack:</strong> Python, SQL, JavaScript, PySpark, Spark, Hudi, Delta Lake, Airflow, Airbyte, DBT, Kubernetes (GKE), Docker, Pulumi, GCP (BigQuery, GCS, BigLake, Spanner, Pub/Sub, Cloud Build, Artifact Registry, IAM / Workload Identity), AWS (S3, Lambda, API Gateway, SQS/SNS, RDS, Secrets Manager, EC2, ECR, CodeBuild, CodeCommit), MongoDB, PostgreSQL, Neo4j, Redis, Slack alerting.</p>
+<h3>Head of IT and Finance — Engineering Solutions LLC</h3>
+<p class="meta-line"><em>March 2013 — December 2017</em></p>
+<ul>
+  <li>Led IT and finance functions; oversaw rollout and operation of ERP, reporting systems, and office IT infrastructure.</li>
+  <li>Supported cross-functional decision-making through systems thinking, governance, and process automation.</li>
+</ul>
+<h3>Head of IT Department — New Engineering Solution</h3>
+<p class="meta-line"><em>April 2003 — February 2013</em></p>
+<ul>
+  <li>Owned ERP, corporate IT infrastructure, and reporting systems; introduced practices around structured data management and automation.</li>
+</ul>
+<hr />
+<h2>Relevant Projects (open-source / personal)</h2>
+<ul>
+  <li><strong>k3s-fastapi-app</strong> — production template for FastAPI + Celery + Postgres + Redis on K3S / AWS EC2 with hybrid CI/CD (GitHub Actions → CodeCommit → CodeBuild → ECR → K3S).</li>
+  <li><strong>dify-vm-ubuntu</strong> — one-shot installer for on-prem Dify (Multi-Database Era) on Ubuntu 22.04+ with Postgres / MySQL / OceanBase support, nginx, and certbot.</li>
+  <li><strong>postgresql-yandex-vm</strong> — bash automation (Ansible-role style) for the full PostgreSQL deployment lifecycle on Ubuntu: packages, <code>pg_hba</code> / <code>postgresql.conf</code>, UFW, retention-aware backups, monitoring.</li>
+  <li><strong>yofi-airflow-kubernetes-operator</strong> — KubernetesPodOperator pattern for Spark/Python jobs on GKE with Workload Identity, Cloud Build pipeline, and dev/prod separation.</li>
+</ul>
+<hr />
+<h2>Education</h2>
+<ul>
+  <li><strong>RPANEPA</strong> — MBA, Information Technology <em>(September 2005 — May 2007)</em></li>
+  <li><strong>Southern Federal University</strong> (formerly Rostov State University) — PhD, Mathematical Sciences <em>(September 1994 — May 2003)</em></li>
+</ul>
+<hr />
+<h2>Certifications and additional training</h2>
+<ul>
+  <li><strong>Certified Accountant Practitioner (CAP)</strong></li>
+  <li>Advanced training: <strong>Financial accounting and reporting (IFRS)</strong>, <strong>Management accounting</strong></li>
+</ul>
+<hr />
+<h2>Additional Information</h2>
+<ul>
+  <li>Open to relocation to Limassol, Cyprus; experienced living and working across multiple countries (Russia, China, Thailand) and cross-cultural teams.</li>
+  <li>Strong focus on security best practices, disaster recovery, and incident management in business-critical environments (anti-fraud, finance).</li>
+  <li>Continuously follow Big Data / AI ecosystem developments and use generative AI tools to accelerate operational tasks and runbook authoring.</li>
+</ul>
+</body>
+</html>

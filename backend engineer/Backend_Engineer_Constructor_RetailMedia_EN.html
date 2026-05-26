@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Backend_Engineer_Constructor_RetailMedia_EN</title>
+  <style>
+    :root {
+      --text: #1a1a1a;
+      --muted: #555;
+      --border: #d0d7de;
+      --accent: #0d47a1;
+      --bg-soft: #f6f8fa;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0 auto;
+      max-width: 210mm;
+      padding: 14mm 16mm 18mm;
+      font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+      font-size: 10.5pt;
+      line-height: 1.45;
+      color: var(--text);
+      background: #fff;
+    }
+    h1 {
+      margin: 0 0 0.35rem;
+      font-size: 1.7rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    h2 {
+      margin: 1.2rem 0 0.45rem;
+      padding-bottom: 0.2rem;
+      font-size: 0.88rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      border-bottom: 1px solid var(--border);
+    }
+    h3 {
+      margin: 0.9rem 0 0.2rem;
+      font-size: 1rem;
+    }
+    p {
+      margin: 0.35rem 0;
+    }
+    .meta-line {
+      margin-top: 0;
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+    ul {
+      margin: 0.25rem 0 0.55rem;
+      padding-left: 1.15rem;
+    }
+    li {
+      margin: 0.18rem 0;
+    }
+    hr {
+      border: 0;
+      border-top: 1px solid var(--border);
+      margin: 0.8rem 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0.4rem 0 0.7rem;
+      font-size: 9.7pt;
+    }
+    th, td {
+      border: 1px solid var(--border);
+      padding: 0.35rem 0.5rem;
+      vertical-align: top;
+      text-align: left;
+    }
+    thead th {
+      background: var(--bg-soft);
+    }
+    tbody th {
+      width: 28%;
+      font-weight: 600;
+      background: #fcfcfc;
+    }
+    code {
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 0.94em;
+    }
+    a {
+      color: inherit;
+    }
+    @page {
+      size: A4;
+      margin: 12mm 14mm 14mm;
+    }
+    @media print {
+      body {
+        padding: 0;
+        max-width: none;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      h2, h3 {
+        break-after: avoid;
+      }
+      ul, table {
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<h1>Vitaly Kurnosenko</h1>
+<p><strong>Senior Backend Engineer | Python &middot; FastAPI &middot; AWS &amp; GCP &middot; APIs &middot; IaC &middot; CI/CD &middot; Observability</strong></p>
+<p class="meta-line">
+  <strong>Place of Residence:</strong> Asia (open to relocation) &nbsp;&middot;&nbsp;
+  <strong>Phone / Skype:</strong> +86 15601694273 &nbsp;&middot;&nbsp;
+  <strong>Email:</strong> rikkimortycrypt@gmail.com &nbsp;&middot;&nbsp;
+  <strong>Telegram:</strong> @vitaly_kur &nbsp;&middot;&nbsp;
+  <strong>Languages:</strong> English - B2 / Upper-Intermediate (fluent spoken and written); Chinese - HSK 4; Russian - native
+</p>
+
+<hr />
+
+<h2>Professional Summary</h2>
+<p>Senior engineer with a <strong>strong formal CS background (PhD, mathematical sciences)</strong> and years of <strong>production ownership</strong> across <strong>distributed backends</strong>, <strong>data-heavy services</strong>, and <strong>cloud infrastructure</strong>. Comfortable owning the full path from <strong>API design</strong> and <strong>service boundaries</strong> through <strong>IaC</strong>, <strong>CI/CD</strong>, <strong>runtime operations</strong>, and <strong>incident response</strong>.</p>
+<p>Most recent work spans <strong>international e-commerce / fintech</strong> (Yofi - anti-fraud and customer intelligence for <strong>Shopify</strong> merchants, including <strong>Lululemon</strong>) and <strong>AI document / invoice automation</strong> (Sinoptics AI).</p>
+<p>Core strengths: <strong>Python</strong> (including <strong>FastAPI</strong> where used), <strong>AWS + GCP</strong>, <strong>API Gateway + Lambda</strong> patterns deployed with <strong>SST/CDK</strong>, <strong>Kubernetes</strong> (GKE, Knative-style services, Helm), <strong>relational + NoSQL</strong> persistence, <strong>Prometheus/Grafana</strong> on telemetry Kubernetes (Helm), and <strong>SLO-minded</strong> operations (structured logging, Slack-driven ops alerts in infra templates, incident participation).</p>
+
+<hr />
+
+<h2>Constructor.io - Role Fit (Retail Media / Sponsored Listings)</h2>
+<table>
+  <thead>
+    <tr>
+      <th scope="col">Requirement</th>
+      <th scope="col">How your experience maps</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"><strong>Python + FastAPI</strong> for web services</th>
+      <td><strong>FastAPI</strong> and <strong>Uvicorn</strong> on <strong>GCP</strong> (internal Knative-oriented API gateway service). <strong>FastAPI + Celery + Redis</strong> on <strong>K3S</strong> at Sinoptics. <strong>Python Lambda</strong> layers across multiple <strong>SST</strong>-deployed services (main public API gateway, billing, orders).</td>
+    </tr>
+    <tr>
+      <th scope="row"><strong>High-load / real-time</strong></th>
+      <td><strong>Telemetry backend</strong>: Knative-style HTTP services, <strong>Go/Gin</strong> and <strong>TypeScript</strong>, documented <strong>HTTP load-generator</strong> tests at <strong>high concurrency</strong> against telemetry endpoints. <strong>Spark</strong> / <strong>Airflow</strong> data plane at scale (see Data Engineer bullets below).</td>
+    </tr>
+    <tr>
+      <th scope="row"><strong>IaC - CloudFormation / Terraform</strong></th>
+      <td><strong>AWS SAM</strong> (Serverless Application Model) <strong>CloudFormation</strong> stacks for org-wide env + <strong>GitHub Actions</strong> deploy workflows. <strong>VPC</strong> stacks: <strong>CloudFormation</strong> + SAM configs. <strong>GKE hub</strong>: <strong>Helm</strong> plus documented <strong>Terraform</strong> workflow for related infra. <strong>GCP foundation</strong>: <strong>Pulumi</strong> (Python). <strong>Global webhook ingress</strong>: <strong>Pulumi</strong> entrypoint + <strong>GitHub Actions</strong>. <strong>SST + AWS CDK</strong> for Lambda/API stacks.</td>
+    </tr>
+    <tr>
+      <th scope="row"><strong>CI/CD</strong> (incl. GitHub Actions)</th>
+      <td><strong>GitHub Actions</strong> on hub, webhook, and env stacks; Sinoptics and a separate <strong>public AI validation</strong> repo; <strong>AWS CodeBuild + CodeCommit</strong> and <strong>Google Cloud Build</strong> from broader platform work.</td>
+    </tr>
+    <tr>
+      <th scope="row"><strong>Observability</strong> (Prometheus / Grafana)</th>
+      <td>Telemetry codebase: <strong>Helm</strong>-based <strong>Prometheus</strong> (community chart) and <strong>Grafana</strong> datasource toward in-cluster Prometheus. <strong>Slack</strong> alert routing parameters in shared <strong>SAM/CloudFormation</strong> env templates. <strong>GCP Cloud Monitoring / Logging</strong>, <strong>AWS X-Ray</strong> on the main serverless API gateway.</td>
+    </tr>
+    <tr>
+      <th scope="row"><strong>MySQL / PostgreSQL, ClickHouse / Athena class</strong></th>
+      <td><strong>PostgreSQL / RDS</strong> (indexing and ops notes in internal custom-portal gateway docs). <strong>MongoDB</strong>, <strong>Redis</strong>, <strong>Neo4j</strong>, <strong>Spanner</strong>, <strong>BigQuery</strong> in Lambda Python layers. Lake / warehouse patterns: <strong>BigQuery</strong>, <strong>Hudi/Delta</strong>, <strong>BigLake</strong>.</td>
+    </tr>
+    <tr>
+      <th scope="row"><strong>SOA / microservices, API design</strong></th>
+      <td>Many small deployable units: <strong>API Gateway + Lambda</strong> (SST/CDK), <strong>Pulumi</strong> webhook stack, <strong>Knative / kn func</strong> workflow in telemetry documentation, <strong>Helm</strong>-packaged hub service. <strong>OpenAPI-related</strong> Python tooling on the main gateway stack.</td>
+    </tr>
+    <tr>
+      <th scope="row"><strong>AWS / Azure / GCP</strong></th>
+      <td>Deep <strong>AWS</strong> + <strong>GCP</strong>; Azure not a primary production cloud in recent roles.</td>
+    </tr>
+    <tr>
+      <th scope="row"><strong>Cross-functional + English</strong></th>
+      <td><strong>GitBook</strong> docs, consulting product teams on data tooling, stakeholder communication in international teams.</td>
+    </tr>
+    <tr>
+      <th scope="row"><strong>Ad tech (ideal)</strong></th>
+      <td>Not classical ad network - <strong>Shopify</strong> merchant surface, internal <strong>billing quota validation</strong> and <strong>billing flags</strong> Lambdas, <strong>ML gateway</strong> (SNS+SQS-triggered Python Lambda routing models, shadow writes to <strong>MongoDB</strong>).</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2>Core Skills</h2>
+<table>
+  <thead>
+    <tr>
+      <th scope="col">Area</th>
+      <th scope="col">Tools and experience</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Backend &amp; APIs</th>
+      <td><strong>Python</strong> (Lambda handlers + shared layers), <strong>FastAPI</strong> (GCP portal/Knative-oriented gateway, Sinoptics), <strong>Node.js</strong> / <strong>TypeScript</strong> in SST and telemetry codebases, <strong>REST</strong> behind <strong>API Gateway</strong>, <strong>Go/Gin</strong> (telemetry).</td>
+    </tr>
+    <tr>
+      <th scope="row">Cloud</th>
+      <td><strong>AWS</strong> (Lambda, API Gateway, S3, SQS/SNS, EventBridge, RDS, Secrets Manager, EC2, ECR, CodeBuild, CodeCommit), <strong>GCP</strong> (GKE, BigQuery, GCS, Cloud Build, Artifact Registry, IAM / Workload Identity, Memorystore Redis).</td>
+    </tr>
+    <tr>
+      <th scope="row">IaC &amp; config</th>
+      <td><strong>Pulumi (Python)</strong>, <strong>AWS SAM / CloudFormation</strong>, <strong>SST + AWS CDK</strong>, <strong>Helm</strong>, <strong>Terraform</strong> (documented alongside GKE hub).</td>
+    </tr>
+    <tr>
+      <th scope="row">Datastores</th>
+      <td><strong>PostgreSQL</strong> (RDS / portal gateway), <strong>MongoDB</strong>, <strong>Redis</strong> (incl. cluster client in layers), <strong>Neo4j</strong>, <strong>Spanner</strong>, <strong>BigQuery</strong>, lakehouse (<strong>Hudi / Delta</strong>, <strong>BigLake</strong>). <strong>MySQL</strong> in on-prem / Dify-style deployments (Sinoptics).</td>
+    </tr>
+    <tr>
+      <th scope="row">CI/CD &amp; quality gates</th>
+      <td><strong>GitHub Actions</strong> (hub, env stacks, webhook gateway; public side project: tests, Docker, Trivy SARIF), <strong>CodeBuild &rarr; ECR &rarr; Kubernetes</strong>, <strong>Cloud Build</strong> for data-plane images.</td>
+    </tr>
+    <tr>
+      <th scope="row">Orchestration &amp; distributed work</th>
+      <td><strong>Kubernetes (GKE, K3S/Rancher)</strong>, <strong>Airflow</strong> (pod-based tasks on GKE), <strong>Hatchet</strong> on K8s, <strong>n8n</strong> (Sinoptics), <strong>Knative</strong> tooling (kn / kn func in telemetry docs).</td>
+    </tr>
+    <tr>
+      <th scope="row">Observability &amp; operations</th>
+      <td><strong>Prometheus + Grafana</strong> (Helm) for telemetry Kubernetes; <strong>Slack</strong> channels wired through CloudFormation parameters; structured logging and pipeline alerting; DR patterns (secrets, encryption, backups).</td>
+    </tr>
+    <tr>
+      <th scope="row">E-commerce domain</th>
+      <td><strong>Shopify</strong> integrations (official Shopify Python SDK and HMAC validation on main serverless gateway stack), <strong>Lululemon</strong> and enterprise merchant context, webhooks and order/product pipelines.</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h2>Professional Experience</h2>
+
+<h3>Backend Engineer / AI Platform Engineer - Sinoptics AI</h3>
+<p class="meta-line"><em>October 2025 - May 2026 (remote)</em></p>
+<ul>
+  <li>Migrated <strong>FastAPI + Celery + Redis</strong> to <strong>K3S (Rancher)</strong> on bare-metal EC2 (AWS China); <strong>hybrid CI/CD</strong>: <strong>GitHub Actions &rarr; CodeCommit &rarr; CodeBuild &rarr; ECR &rarr; kubectl rollout</strong>, secrets in <strong>Secrets Manager</strong>.</li>
+  <li>Ran <strong>on-prem AI stack</strong> (Dify, PostgreSQL, nginx, Let's Encrypt), <strong>Hatchet</strong> workflow engine on <strong>Kubernetes</strong> for <strong>OCR / LLM</strong> workloads.</li>
+  <li><strong>Layered microservice architecture</strong> (n8n &rarr; agents &rarr; aggregator) with <strong>RBAC</strong>, encryption, audit logs, <strong>GDPR / CN</strong> compliance awareness.</li>
+</ul>
+
+<h3>Backend Engineer - Yofi Inc. (USA)</h3>
+<p class="meta-line"><em>February 2022 - October 2025 (remote)</em></p>
+<p>Yofi: <strong>anti-fraud / customer intelligence</strong> for <strong>Shopify</strong> merchants (<strong>Lululemon</strong> and others). The bullets below reflect hands-on work across internal Yofi engineering codebases (API gateways, billing, orders, telemetry, shared env IaC, GKE hub, GCP foundation).</p>
+<ul>
+  <li><strong>Serverless API surface (AWS)</strong>: primary <strong>SST + AWS CDK</strong> stack for Customer, Order, Installation HTTP APIs - <strong>API Gateway v2</strong> constructs, <strong>Lambda</strong> (Node.js handlers plus <strong>Python Lambda layer</strong> with boto3, PyMongo, redis-py-cluster, Neo4j, BigQuery / Spanner / Firestore clients, <strong>AWS X-Ray</strong> SDK).</li>
+  <li><strong>GCP portal / Knative path</strong>: internal <strong>FastAPI + Uvicorn</strong> service with Kubernetes Python client, <strong>Google Cloud Spanner</strong>, <strong>Redis</strong> (Memorystore TLS), <strong>GCP Secret Manager</strong>, JWT admin APIs.</li>
+  <li><strong>Custom portal gateway</strong>: <strong>SST v2 + AWS CDK Lambda Python</strong> constructs, Jest tests; <strong>PostgreSQL / RDS</strong> indexing and tuning documented internally.</li>
+  <li><strong>Global webhooks</strong>: <strong>Pulumi</strong> (Python) stack, just + uv developer workflow, <strong>GitHub Actions</strong> for tests and deploy to dev/main &rarr; AWS.</li>
+  <li><strong>Telemetry platform</strong>: Knative-style services, <strong>Go / TypeScript</strong>, container images in ECR; <strong>Prometheus</strong> (community Helm chart) and <strong>Grafana</strong> datasource documentation; HTTP load-generator tests against public telemetry URLs.</li>
+  <li><strong>ML routing</strong>: SST + CDK; <strong>SNS + SQS</strong>-triggered <strong>Python Lambda</strong> selects model, writes <strong>MongoDB</strong> shadow predictions.</li>
+  <li><strong>Billing controls</strong>: SST + Python Lambda stacks for quota validation and billing flags; layers use boto3, PyMongo, <strong>Redis</strong> cluster client, Spanner / Google libs.</li>
+  <li><strong>Orders</strong>: SST + Python Lambda for order persistence and state prediction; PyMongo, Gremlin / graph-related dependencies in order persistence layers.</li>
+  <li><strong>Shared hub on GKE</strong>: <strong>Helm</strong> chart, Kubernetes deployment, OAuth2 with <strong>Okta</strong> for Airflow / Airbyte, <strong>GitHub Actions</strong> deploy workflows; documented <strong>Terraform</strong> workflow alongside hub infra.</li>
+  <li><strong>Org-wide AWS env (IaC)</strong>: large <strong>SAM/CloudFormation</strong> templates (Slack channel parameters for alerts); VPC stacks via CloudFormation + SAM.</li>
+  <li><strong>GCP foundation</strong>: <strong>Pulumi</strong> Python project; Cloud Run-style Python sources including Shopify webhook handlers wired through Pub/Sub.</li>
+  <li><strong>Data plane at scale</strong>: <strong>Spark on Kubernetes</strong>, <strong>Airflow</strong> (~25 prod DAGs), <strong>GCS + BigLake + Hudi/Delta</strong>, pipelines over <strong>1B+</strong> events.</li>
+  <li><strong>Cross-team</strong>: GitBook API docs, Airflow pod-task templates, training on DBT, Airbyte, Spark practices.</li>
+</ul>
+<p><strong>Representative stack:</strong> API Gateway, Lambda, SST, AWS CDK, SAM/CloudFormation, Pulumi, Terraform (documented), SQS/SNS, EventBridge, MongoDB, PostgreSQL, Redis, Neo4j, Spanner, BigQuery, Airflow, Spark, GKE, Helm, Docker, Prometheus, Grafana.</p>
+
+<h3>Head of IT and Finance - Engineering Solutions LLC</h3>
+<p class="meta-line"><em>March 2013 - December 2017</em></p>
+<ul>
+  <li>Led IT and finance; ERP, reporting, governance - stakeholder management and delivery under business constraints.</li>
+</ul>
+
+<h3>Head of IT Department - New Engineering Solution</h3>
+<p class="meta-line"><em>April 2003 - February 2013</em></p>
+<ul>
+  <li>Owned corporate systems and reporting; early data discipline and automation.</li>
+</ul>
+
+<hr />
+
+<h2>Open Source / Personal Templates</h2>
+<ul>
+  <li><strong>FastAPI on K3S</strong> - FastAPI + Celery + Postgres + Redis, GitHub Actions &rarr; CodeBuild &rarr; ECR rollout (public template repo).</li>
+  <li><strong>Dify on Ubuntu</strong>, <strong>PostgreSQL on cloud VM</strong> - repeatable installs, TLS, backups (public automation repos).</li>
+  <li><strong>Airflow on GKE</strong> - pod-based Spark/Python jobs, Cloud Build, dev/prod separation (public operator/template repo).</li>
+</ul>
+
+<hr />
+
+<h2>Side Project - AI Company-Validation (public repo)</h2>
+<p>Multi-agent company-validation and <strong>invoice</strong> workflows (n8n, Docker Compose, <strong>MongoDB</strong> logging). <strong>GitHub Actions</strong>: MongoDB + Redis service containers, Node + Python tests, Docker Compose build/smoke, <strong>Trivy</strong> SARIF upload, branch-based workflows.</p>
+
+<hr />
+
+<h2>Education</h2>
+<ul>
+  <li><strong>Southern Federal University</strong> - PhD, Mathematical Sciences <em>(September 1994 - May 2003)</em></li>
+  <li><strong>RPANEPA</strong> - MBA, Information Technology <em>(September 2005 - May 2007)</em></li>
+</ul>
+
+<hr />
+
+<h2>Certifications</h2>
+<ul>
+  <li><strong>Certified Accountant Practitioner (CAP)</strong></li>
+  <li>Advanced training: <strong>IFRS financial reporting</strong>, <strong>management accounting</strong></li>
+</ul>
+
+<hr />
+
+<h2>Additional</h2>
+<ul>
+  <li>Comfortable <strong>remote</strong>, async communication, <strong>English</strong> for design docs and incidents.</li>
+  <li>Security- and <strong>compliance-aware</strong> delivery (fraud, finance, cross-border data).</li>
+</ul>
+
+</body>
+</html>

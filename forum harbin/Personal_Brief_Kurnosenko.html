@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Personal Brief — Vitaly Kurnosenko</title>
+  <style>
+    :root {
+      --text: #14181d;
+      --muted: #5b6470;
+      --soft: #f3f5f8;
+      --border: #d6dbe2;
+      --accent: #0d47a1;
+      --accent-2: #b71c1c;
+    }
+
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #e9ecef;
+      color: var(--text);
+      font-family: "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+      font-size: 9pt;
+      line-height: 1.26;
+    }
+
+    .sheet {
+      width: 210mm;
+      height: 297mm;
+      margin: 12mm auto;
+      padding: 10mm 11mm 8mm;
+      background: #fff;
+      box-shadow: 0 2px 14px rgba(0,0,0,0.08);
+      display: grid;
+      grid-template-rows: auto auto 1fr auto;
+      gap: 3mm;
+      overflow: hidden;
+    }
+
+    @media print {
+      html, body { background: #fff; }
+      .sheet {
+        margin: 0;
+        box-shadow: none;
+        page-break-after: avoid;
+      }
+    }
+
+    /* ===== Header ===== */
+    .head {
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 2mm;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: end;
+      gap: 6mm;
+    }
+    .head h1 {
+      margin: 0;
+      font-size: 17.5pt;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      line-height: 1.05;
+    }
+    .head h1 .ru { color: var(--text); }
+    .head h1 .en { color: var(--muted); font-weight: 600; font-size: 13pt; }
+    .head .tag {
+      margin-top: 1.5mm;
+      font-size: 10.2pt;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.01em;
+    }
+    .head .tag .cn { color: var(--accent-2); margin-left: 4pt; font-weight: 700; }
+    .head .meta {
+      text-align: right;
+      font-size: 8.4pt;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+    .head .meta strong { color: var(--text); }
+
+    /* ===== Lead paragraph ===== */
+    .lead {
+      background: var(--soft);
+      border-left: 3px solid var(--accent);
+      padding: 2mm 3mm;
+      font-size: 8.6pt;
+      line-height: 1.3;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3mm;
+    }
+    .lead p { margin: 0; }
+    .lead p strong { color: var(--accent); }
+    .lead .en { color: #2a3340; }
+
+    /* ===== Two-column body ===== */
+    .body {
+      display: grid;
+      grid-template-columns: 1.55fr 1fr;
+      gap: 4mm;
+      min-height: 0;
+    }
+
+    h2 {
+      margin: 0 0 1mm;
+      font-size: 7.8pt;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.6mm;
+    }
+
+    h3 {
+      margin: 1.6mm 0 0.6mm;
+      font-size: 8.8pt;
+      font-weight: 700;
+      color: var(--text);
+      display: flex;
+      align-items: baseline;
+      gap: 1.6mm;
+    }
+    h3 .num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 4.4mm; height: 4.4mm;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 50%;
+      font-size: 7pt;
+      font-weight: 700;
+      flex: none;
+    }
+    h3 .en { color: var(--muted); font-weight: 500; font-size: 8pt; }
+
+    ul {
+      margin: 0;
+      padding-left: 3.6mm;
+      list-style: none;
+    }
+    ul li {
+      position: relative;
+      margin: 0.3mm 0;
+      padding-left: 0;
+      font-size: 8.1pt;
+      line-height: 1.26;
+    }
+    ul li::before {
+      content: "▸";
+      color: var(--accent);
+      position: absolute;
+      left: -3.2mm;
+      font-size: 7.4pt;
+    }
+    ul li .en { color: var(--muted); font-size: 7.7pt; }
+    ul li b { color: var(--text); }
+
+    .col-left .block { margin-bottom: 1.5mm; }
+
+    /* ===== Right column compact panels ===== */
+    .panel {
+      border: 1px solid var(--border);
+      border-radius: 1.5mm;
+      padding: 1.8mm 2.4mm;
+      margin-bottom: 1.8mm;
+      background: #fff;
+    }
+    .panel h2 { margin-top: 0; }
+    .panel ul li { font-size: 7.9pt; }
+
+    .kv { font-size: 7.9pt; }
+    .kv .row { display: grid; grid-template-columns: 18mm 1fr; gap: 1.2mm; padding: 0.2mm 0; }
+    .kv .row b { color: var(--accent); font-weight: 700; }
+
+    /* ===== Footer ===== */
+    .foot {
+      border-top: 2px solid var(--accent);
+      padding-top: 1.8mm;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 4mm;
+      align-items: center;
+    }
+    .foot .contacts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.4mm 3.5mm;
+      font-size: 8.1pt;
+    }
+    .foot .contacts span { white-space: nowrap; }
+    .foot .contacts span b { color: var(--accent); font-weight: 700; }
+    .foot .note {
+      font-size: 7.2pt;
+      color: var(--muted);
+      text-align: right;
+      line-height: 1.25;
+      max-width: 62mm;
+    }
+    .foot .note b { color: var(--text); }
+  </style>
+</head>
+<body>
+  <div class="sheet">
+
+    <!-- ============ HEADER ============ -->
+    <header class="head">
+      <div>
+        <h1>
+          <span class="ru">Виталий&nbsp;Курносенко</span>
+          <span class="en">· Vitaly&nbsp;Kurnosenko</span>
+        </h1>
+        <div class="tag">
+          Финансы · Автоматизация · Россия–Китай
+          <span class="cn">财务 · 自动化 · 中俄</span>
+        </div>
+      </div>
+      <div class="meta">
+        <div><strong>Шанхай · Shanghai · 上海</strong></div>
+        <div>15+ лет международной практики</div>
+        <div>RU · EN B2+ · 中文 HSK&nbsp;4</div>
+      </div>
+    </header>
+
+    <!-- ============ LEAD ============ -->
+    <section class="lead">
+      <p class="ru">
+        Финансовый и операционный практик с базой в Шанхае. Помогаю
+        <strong>запускать и поддерживать бизнес в Китае</strong>: финансы,
+        отчётность, казначейство, <strong>автоматизация</strong> и
+        <strong>данные</strong>; координация между российскими акционерами,
+        китайскими партнёрами, банками и аудиторами.
+      </p>
+      <p class="en">
+        Finance &amp; operations practitioner based in Shanghai. I help
+        <strong>launch and run businesses in China</strong>: finance,
+        reporting, treasury, <strong>process &amp; data automation</strong>,
+        and coordination between Russian shareholders, Chinese partners,
+        banks and auditors.
+      </p>
+    </section>
+
+    <!-- ============ BODY ============ -->
+    <section class="body">
+
+      <!-- LEFT: 4 capability blocks -->
+      <div class="col-left">
+
+        <div class="block">
+          <h2>Области компетенций · Areas of competence</h2>
+
+          <h3><span class="num">1</span> Автоматизация процессов и работа с данными <span class="en">/ Process &amp; data automation</span></h3>
+          <ul>
+            <li><b>ERP</b>: настройка отчётов, маппинг отчётности <span class="en">— ERP: report setup &amp; reporting mapping</span></li>
+            <li><b>Excel</b> (advanced), <b>SQL</b>, <b>Python</b> для анализа и сверок <span class="en">— for analysis and reconciliations</span></li>
+            <li>Витрины, дашборды, <b>BI</b> (Power BI и пр.) <span class="en">— data marts, dashboards, BI</span></li>
+            <li>DWH / ETL, оркестрация (<b>Airflow</b>, <b>DBT</b>), большие массивы <span class="en">— DWH/ETL, orchestration, large datasets</span></li>
+            <li>API-интеграции, <b>AI</b>-функции, веб-кабинеты для документов и отчётности <span class="en">— API integrations, AI features, document &amp; reporting portals</span></li>
+          </ul>
+
+          <h3><span class="num">2</span> Корпоративные финансы и казначейство <span class="en">/ Corporate finance &amp; treasury</span></h3>
+          <ul>
+            <li>Бюджетирование, лимиты, <b>plan-fact</b> (квартал / год) <span class="en">— budgeting, expense limits, plan-fact (Q / Y)</span></li>
+            <li>Прогноз <b>cash flow</b> по сценариям, ежемесячные платёжные планы <span class="en">— scenario cash-flow forecasting, monthly payment plans</span></li>
+            <li>Отчётность <b>IFRS / CAS / РСБУ</b>, отдельная и консолидированная <span class="en">— standalone &amp; consolidated reporting</span></li>
+            <li>Внутренний контроль платежей, банковские операции <span class="en">— internal payment controls, banking operations</span></li>
+            <li>Аудит, материалы для совета директоров, капитализация <span class="en">— audit, board materials, capital actions</span></li>
+          </ul>
+
+          <h3><span class="num">3</span> Запуск и сопровождение бизнеса в КНР <span class="en">/ Launching &amp; running businesses in China</span></h3>
+          <ul>
+            <li>Постановка финансовой функции «<b>с нуля</b>» в КНР <span class="en">— setting up finance from scratch in China</span></li>
+            <li>Регламенты: закупки, договоры, ценообразование, бюджетирование <span class="en">— procurement, contracts, pricing, budgeting policies</span></li>
+            <li>Работа с китайскими банками, аудиторами, контрагентами <span class="en">— Chinese banks, auditors, counterparties</span></li>
+            <li>Сопровождение интересов российских и китайских акционеров <span class="en">— support for RU &amp; CN shareholders</span></li>
+            <li>Прямой канал «<b>boots-on-the-ground</b>» в Шанхае <span class="en">— direct presence on the ground in Shanghai</span></li>
+          </ul>
+
+          <h3><span class="num">4</span> Координация Россия–Китай и стейкхолдеры <span class="en">/ Russia–China coordination &amp; stakeholders</span></h3>
+          <ul>
+            <li>Кросс-функциональная и межкультурная работа <span class="en">— cross-functional, cross-cultural delivery</span></li>
+            <li>Коммуникация на <b>RU / EN / 中文 (HSK 4)</b> <span class="en">— communication in three languages</span></li>
+            <li>Совет директоров, акционеры, банки, аудиторы, регулятор <span class="en">— board, shareholders, banks, auditors, regulators</span></li>
+            <li>Контракты, <b>ВЭД</b>, Incoterms, таможня, логистика <span class="en">— contracts, foreign trade, Incoterms, customs, logistics</span></li>
+            <li>Переговоры, выставки, развитие партнёрств <span class="en">— negotiations, expos, partnership development</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- RIGHT: panels -->
+      <div class="col-right">
+
+        <div class="panel">
+          <h2>Чем полезен · How I help</h2>
+          <ul>
+            <li><b>Доверенный «свой» в Китае</b> для российского бенефициара <span class="en">— trusted insider in China for RU principals</span></li>
+            <li>Финансовая прозрачность по <b>IFRS / CAS</b> в одной голове <span class="en">— IFRS &amp; CAS under one roof</span></li>
+            <li>Автоматизация рутины: <b>отчёты, сверки, дашборды</b> <span class="en">— automating reports, reconciliations, dashboards</span></li>
+            <li>Скорость запуска юр.лица и финпроцессов в КНР <span class="en">— speed of entity &amp; finance setup in China</span></li>
+            <li>Спокойный канал между РФ и КНР по деньгам и документам <span class="en">— calm RU↔CN channel for money &amp; documents</span></li>
+          </ul>
+        </div>
+
+        <div class="panel">
+          <h2>География и отрасли · Geography &amp; industries</h2>
+          <ul>
+            <li><b>Шанхай</b> (база), КНР, Россия <span class="en">— Shanghai, China, Russia</span></li>
+            <li>Машиностроение и инжиниринг <span class="en">— engineering &amp; manufacturing</span></li>
+            <li>ВЭД, логистика, дистрибуция <span class="en">— foreign trade, logistics, distribution</span></li>
+            <li>Финтех, AI / SaaS, compliance</li>
+          </ul>
+        </div>
+
+        <div class="panel">
+          <h2>Стек и инструменты · Tools &amp; stack</h2>
+          <div class="kv">
+            <div class="row"><b>Финансы</b><span>ERP · IFRS / CAS / РСБУ · Excel</span></div>
+            <div class="row"><b>Данные</b><span>SQL · Python · Power BI · DBT · Airflow · Spark</span></div>
+            <div class="row"><b>Облака</b><span>AWS · GCP</span></div>
+            <div class="row"><b>Веб</b><span>React · TypeScript · Next.js</span></div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h2>Образование · Education</h2>
+          <ul>
+            <li><b>MBA</b>, РАНХиГС, CIO <span class="en">— RANEPA, CIO track</span></li>
+            <li><b>Кандидат физ.-мат. наук</b> <span class="en">— PhD candidate, Phys. &amp; Math.</span></li>
+            <li><b>CAP</b> — Certified Accountant Practitioner</li>
+            <li>Курсы CPA: IFRS, упр. учёт, налоги</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="foot">
+      <div class="contacts">
+        <span><b>Tel / 电话</b> +86&nbsp;156&nbsp;0169&nbsp;4273</span>
+        <span><b>WeChat</b> porohnya</span>
+        <span><b>Email</b> kurnosenko@mail.ru</span>
+        <span><b>Telegram</b> @vitaly_kur</span>
+        <span><b>Skype</b> kurnosenko_vitaly</span>
+      </div>
+      <div class="note">
+        <b>Названия компаний и должностей — по запросу.</b><br/>
+        Company names and titles — available on request.
+      </div>
+    </footer>
+
+  </div>
+</body>
+</html>
