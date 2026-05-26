@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vitaly Kurnosenko — Resume</title>
+  <style>
+    /* ── Reset & base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --accent:   #1a56db;
+      --text:     #1e293b;
+      --muted:    #64748b;
+      --border:   #e2e8f0;
+      --bg:       #ffffff;
+      --tag-bg:   #eff6ff;
+      --tag-text: #1a56db;
+      --page-w:   780px;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--text);
+      background: #f8fafc;
+    }
+
+    /* ── Page wrapper ── */
+    .page {
+      max-width: var(--page-w);
+      margin: 32px auto;
+      background: var(--bg);
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(0,0,0,.08);
+      overflow: hidden;
+    }
+
+    /* ── Header ── */
+    .header {
+      padding: 36px 48px 28px;
+      border-bottom: 2px solid var(--accent);
+      background: linear-gradient(135deg, #f0f7ff 0%, #ffffff 100%);
+    }
+
+    .header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -.5px;
+      color: var(--text);
+    }
+
+    .header .title {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--accent);
+      margin-top: 2px;
+    }
+
+    .contacts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 24px;
+      margin-top: 14px;
+    }
+
+    .contacts a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: color .15s;
+    }
+    .contacts a:hover { color: var(--accent); }
+
+    .contacts .icon {
+      width: 15px;
+      height: 15px;
+      flex-shrink: 0;
+      opacity: .7;
+    }
+
+    /* ── Body ── */
+    .body { padding: 32px 48px 48px; display: flex; flex-direction: column; gap: 32px; }
+
+    /* ── Section ── */
+    section { display: flex; flex-direction: column; gap: 16px; }
+
+    .section-title {
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--accent);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 6px;
+    }
+
+    /* ── Summary ── */
+    .summary p { color: var(--muted); }
+
+    /* ── Job / Education entry ── */
+    .entry { display: grid; grid-template-columns: 1fr auto; gap: 2px 16px; }
+
+    .entry-company {
+      font-weight: 600;
+      font-size: .95rem;
+      grid-column: 1;
+    }
+
+    .entry-period {
+      font-size: .8rem;
+      color: var(--muted);
+      white-space: nowrap;
+      grid-row: 1;
+      grid-column: 2;
+      text-align: right;
+      padding-top: 2px;
+    }
+
+    .entry-role {
+      font-size: .85rem;
+      color: var(--accent);
+      grid-column: 1;
+      margin-top: -2px;
+    }
+
+    .entry-location {
+      font-size: .78rem;
+      color: var(--muted);
+      grid-column: 2;
+      text-align: right;
+    }
+
+    .entry-bullets {
+      grid-column: 1 / -1;
+      margin-top: 8px;
+      padding-left: 18px;
+    }
+
+    .entry-bullets li {
+      color: var(--muted);
+      margin-bottom: 4px;
+      font-size: .88rem;
+    }
+
+    /* ── Skills table ── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      gap: 10px 20px;
+    }
+
+    .skill-category {
+      font-weight: 600;
+      font-size: .83rem;
+      color: var(--text);
+      white-space: nowrap;
+      padding-top: 2px;
+    }
+
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+
+    .tag {
+      background: var(--tag-bg);
+      color: var(--tag-text);
+      font-size: .77rem;
+      font-weight: 500;
+      padding: 2px 9px;
+      border-radius: 20px;
+    }
+
+    /* ── Projects ── */
+    .project { display: flex; flex-direction: column; gap: 3px; }
+
+    .project-name a {
+      font-weight: 600;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: .93rem;
+    }
+    .project-name a:hover { text-decoration: underline; }
+
+    .project-desc { color: var(--muted); font-size: .88rem; }
+
+    /* ── Certifications / Languages ── */
+    .list-plain { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+    .list-plain li { color: var(--muted); font-size: .88rem; }
+    .list-plain li strong { color: var(--text); }
+
+    /* ── Footer ── */
+    .footer {
+      text-align: center;
+      padding: 14px;
+      font-size: .75rem;
+      color: var(--border);
+      border-top: 1px solid var(--border);
+    }
+
+    /* ── Print ── */
+    @media print {
+      body { background: #fff; }
+      .page { margin: 0; box-shadow: none; border-radius: 0; max-width: 100%; }
+      a { color: inherit !important; }
+      .contacts a { color: var(--muted) !important; }
+      .tag { border: 1px solid var(--border); }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ═══════════════ HEADER ═══════════════ -->
+  <header class="header">
+    <h1>Vitaly Kurnosenko</h1>
+    <div class="title">Software Engineer</div>
+    <div class="contacts">
+      <a href="mailto:email@example.com">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+        email@example.com
+      </a>
+      <a href="https://linkedin.com/in/username" target="_blank">
+        <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        linkedin.com/in/username
+      </a>
+      <a href="https://github.com/username" target="_blank">
+        <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        github.com/username
+      </a>
+      <a href="#">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        City, Country
+      </a>
+    </div>
+  </header>
+
+  <!-- ═══════════════ BODY ═══════════════ -->
+  <div class="body">
+
+    <!-- Summary -->
+    <section class="summary">
+      <div class="section-title">Summary</div>
+      <p>
+        Experienced software engineer with X+ years building scalable backend and frontend systems.
+        Passionate about clean architecture, developer tooling, and continuous delivery.
+        Comfortable across the full stack, from system design to production monitoring.
+      </p>
+    </section>
+
+    <!-- Experience -->
+    <section>
+      <div class="section-title">Experience</div>
+
+      <div class="entry">
+        <div class="entry-company">Company Name</div>
+        <div class="entry-period">Jan 2022 – Present</div>
+        <div class="entry-role">Senior Software Engineer</div>
+        <div class="entry-location">City, Country</div>
+        <ul class="entry-bullets">
+          <li>Led migration of monolithic service to microservices, reducing deploy time by 40 %.</li>
+          <li>Designed and shipped public REST API consumed by 50+ enterprise clients.</li>
+          <li>Mentored a team of 4 junior engineers; introduced code review standards and CI pipelines.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-company">Another Company</div>
+        <div class="entry-period">Mar 2019 – Dec 2021</div>
+        <div class="entry-role">Software Engineer</div>
+        <div class="entry-location">City, Country</div>
+        <ul class="entry-bullets">
+          <li>Built real-time data pipeline processing 2 M events/day using Kafka and Flink.</li>
+          <li>Reduced P99 API latency from 800 ms to 120 ms via query optimization and caching.</li>
+          <li>Contributed to open-source SDK (800+ GitHub stars).</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-company">Startup Name</div>
+        <div class="entry-period">Jun 2017 – Feb 2019</div>
+        <div class="entry-role">Junior Developer</div>
+        <div class="entry-location">Remote</div>
+        <ul class="entry-bullets">
+          <li>Developed React dashboard used daily by 10 k+ users.</li>
+          <li>Automated reporting workflows saving ~15 hours/week of manual work.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section>
+      <div class="section-title">Education</div>
+      <div class="entry">
+        <div class="entry-company">University Name</div>
+        <div class="entry-period">2013 – 2017</div>
+        <div class="entry-role">B.Sc. Computer Science</div>
+        <div class="entry-location">City, Country</div>
+        <ul class="entry-bullets">
+          <li>GPA: 4.0 / 5.0</li>
+          <li>Thesis: "Distributed Consensus Algorithms in Practice"</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section>
+      <div class="section-title">Skills</div>
+      <div class="skills-grid">
+        <div class="skill-category">Languages</div>
+        <div class="skill-tags">
+          <span class="tag">Python</span><span class="tag">TypeScript</span>
+          <span class="tag">Go</span><span class="tag">Java</span>
+        </div>
+
+        <div class="skill-category">Backend</div>
+        <div class="skill-tags">
+          <span class="tag">FastAPI</span><span class="tag">Node.js</span>
+          <span class="tag">Spring Boot</span><span class="tag">gRPC</span>
+          <span class="tag">REST</span><span class="tag">GraphQL</span>
+        </div>
+
+        <div class="skill-category">Frontend</div>
+        <div class="skill-tags">
+          <span class="tag">React</span><span class="tag">Next.js</span>
+          <span class="tag">Tailwind CSS</span>
+        </div>
+
+        <div class="skill-category">Data & Infra</div>
+        <div class="skill-tags">
+          <span class="tag">PostgreSQL</span><span class="tag">Redis</span>
+          <span class="tag">Kafka</span><span class="tag">Elasticsearch</span>
+          <span class="tag">Docker</span><span class="tag">Kubernetes</span>
+        </div>
+
+        <div class="skill-category">Cloud</div>
+        <div class="skill-tags">
+          <span class="tag">AWS</span><span class="tag">GCP</span>
+        </div>
+
+        <div class="skill-category">Tools</div>
+        <div class="skill-tags">
+          <span class="tag">Git</span><span class="tag">GitHub Actions</span>
+          <span class="tag">Terraform</span><span class="tag">Datadog</span>
+          <span class="tag">Sentry</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section>
+      <div class="section-title">Projects</div>
+
+      <div class="project">
+        <div class="project-name">
+          <a href="https://github.com/username/project-alpha" target="_blank">Project Alpha</a>
+        </div>
+        <div class="project-desc">
+          Open-source CLI tool for automated code review using LLMs. 1.2 k GitHub stars.
+          Built with Python + OpenAI API.
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-name">
+          <a href="https://github.com/username/project-beta" target="_blank">Project Beta</a>
+        </div>
+        <div class="project-desc">
+          Real-time collaborative whiteboard. WebSockets + Canvas API. Used by 500+ teams.
+        </div>
+      </div>
+    </section>
+
+    <!-- Certifications -->
+    <section>
+      <div class="section-title">Certifications</div>
+      <ul class="list-plain">
+        <li><strong>AWS Certified Solutions Architect – Associate</strong> &nbsp;·&nbsp; 2023</li>
+        <li><strong>Google Cloud Professional Data Engineer</strong> &nbsp;·&nbsp; 2022</li>
+      </ul>
+    </section>
+
+    <!-- Languages -->
+    <section>
+      <div class="section-title">Languages</div>
+      <ul class="list-plain">
+        <li><strong>Russian</strong> — Native</li>
+        <li><strong>English</strong> — C1 (Professional working proficiency)</li>
+      </ul>
+    </section>
+
+  </div><!-- /body -->
+
+  <div class="footer">Last updated: May 2026</div>
+</div><!-- /page -->
+</body>
+</html>
