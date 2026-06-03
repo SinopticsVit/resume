@@ -1,0 +1,35 @@
+%%{init:{'theme':'base','themeVariables':{'fontSize':'16px','fontFamily':'Segoe UI'}}}%%
+flowchart TD
+    HQ["Москва: руководство закупок и продукт-менеджеры"]
+    Dir["Генеральный директор<br/>(RU, законный представитель WFOE, Шанхай)"]
+    Acc["Бухгалтер<br/>(CN, Шанхай)"]
+    Admin["Офис-администратор<br/>(CN, Шанхай)"]
+    Tech["Технолог детской одежды<br/>(RU)"]
+    CMClothes["Кат. менеджер: одежда<br/>(CN)"]
+    CMToys["Кат. менеджер: игрушки<br/>(CN)"]
+    CMAcc["Кат. менеджер: аксессуары<br/>(CN)"]
+    Content["Контент-продюсер<br/>(CN, Шанхай)"]
+    Testing["Координатор тестирования<br/>(CN, Шанхай)"]
+    Analyst["Аналитик рынка<br/>(CN, Шанхай)"]
+    QCLead["Руководитель ОТК<br/>(CN, Гуанчжоу)"]
+    QCInsp["Инспекторы ОТК<br/>(CN, Гуанчжоу/Чэнхай)"]
+
+    HQ -.liaison/функциональное.-> Dir
+    HQ -.функциональное по одежде.-> Tech
+    Dir --> Acc
+    Dir --> Admin
+    Dir --> Tech
+    Dir --> CMClothes
+    Dir --> CMToys
+    Dir --> CMAcc
+    Dir --> Content
+    Dir --> Testing
+    Dir --> Analyst
+    Dir --> QCLead
+    QCLead --> QCInsp
+    Tech -.техэкспертиза.-> CMClothes
+    Tech -.техэкспертиза.-> QCLead
+    Analyst -.тренды.-> CMClothes
+    Analyst -.тренды.-> CMToys
+    Analyst -.тренды.-> CMAcc
+    Content -.съёмка образцов.-> Admin

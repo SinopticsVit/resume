@@ -1,0 +1,5 @@
+python-pptx>=0.6.23
+Pillow>=10.2.0
+markdown>=3.5
+# Для рендеринга mermaid-диаграмм в PNG нужен Node.js + npx @mermaid-js/mermaid-cli.
+# Без Node.js используйте: python build_pptx.py --skip-mermaid (если PNG уже в _assets/diagrams/).

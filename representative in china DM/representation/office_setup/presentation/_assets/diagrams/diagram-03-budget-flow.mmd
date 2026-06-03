@@ -1,0 +1,18 @@
+%%{init:{'theme':'base','themeVariables':{'fontSize':'18px','fontFamily':'Segoe UI'}}}%%
+flowchart LR
+    Parent["Материнская компания<br/>Детский Мир, РФ"]
+    subgraph WFOE [WFOE в КНР]
+        Cost["Себестоимость услуг<br/>cost base"]
+        Margin["Наценка 8%"]
+        Tax["Налоги: НДС 6% + CIT 25%"]
+    end
+    Bank["Корп. счёт WFOE CNY"]
+    Vendors["Зарплаты, аренда, перевозчики,<br/>лаборатории, командировки"]
+    Budget["Бюджет КНР<br/>налоговая"]
+
+    Parent -->|"оплата = cost base x 1.08 + НДС"| Bank
+    Bank --> Cost
+    Cost --> Margin
+    Margin --> Tax
+    Cost --> Vendors
+    Tax -->|"перечисление налогов"| Budget

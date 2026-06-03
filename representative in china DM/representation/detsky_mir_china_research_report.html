@@ -1,0 +1,2439 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Исследование «Детский Мир» — открытие представительства в КНР</title>
+<style>
+:root{
+  --bg:#f6f7f9; --card:#ffffff; --ink:#1f2733; --muted:#5b6675;
+  --brand:#1f3864; --brand-2:#2f5597; --accent:#c0392b;
+  --line:#e3e7ee; --soft:#eef2f8; --code:#0f2f5b;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
+  font-size:16px; line-height:1.65;
+}
+.layout{display:grid; grid-template-columns:300px 1fr; align-items:start; max-width:1400px; margin:0 auto;}
+/* Sidebar TOC */
+.sidebar{position:sticky; top:0; height:100vh; overflow-y:auto; padding:24px 18px; background:var(--brand); color:#dfe7f5;}
+.sidebar h2{font-size:13px; letter-spacing:.08em; text-transform:uppercase; color:#9db4dc; margin:18px 0 8px;}
+.sidebar .brandmark{font-size:18px; font-weight:700; color:#fff; line-height:1.3; margin-bottom:6px;}
+.sidebar .sub{font-size:12px; color:#9db4dc; margin-bottom:8px;}
+.toc, .toc ul{list-style:none; margin:0; padding:0;}
+.toc li{margin:2px 0;}
+.toc a{color:#cdd9ee; text-decoration:none; display:block; padding:5px 10px; border-radius:6px; font-size:13.5px;}
+.toc a:hover{background:rgba(255,255,255,.10); color:#fff;}
+.toc ul{margin-left:10px; border-left:1px solid rgba(255,255,255,.15); padding-left:6px;}
+.toc ul a{font-size:12.5px; color:#a9bcdd;}
+/* Content */
+.content{padding:0 0 80px;}
+.hero{background:linear-gradient(135deg,var(--brand) 0%,var(--brand-2) 100%); color:#fff; padding:46px 48px 38px;}
+.hero h1{margin:0 0 10px; font-size:30px; line-height:1.2; letter-spacing:-.01em;}
+.hero .tagline{color:#cfe; opacity:.92; font-size:15px; max-width:760px;}
+.hero .pills{margin-top:18px; display:flex; flex-wrap:wrap; gap:8px;}
+.hero .pill{background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.22); padding:5px 12px; border-radius:999px; font-size:12.5px;}
+.main{padding:34px 48px;}
+.main h2{font-size:23px; color:var(--brand); margin:42px 0 14px; padding-bottom:8px; border-bottom:2px solid var(--line); scroll-margin-top:14px;}
+.main h2:first-child{margin-top:6px;}
+.main h3{font-size:18px; color:var(--brand-2); margin:26px 0 10px; scroll-margin-top:14px;}
+.main h4{font-size:15.5px; color:var(--ink); margin:18px 0 8px; text-transform:none;}
+.main p{margin:10px 0;}
+.main a{color:var(--brand-2);}
+.main hr{border:0; border-top:1px solid var(--line); margin:30px 0;}
+ul,ol{padding-left:22px;}
+li{margin:4px 0;}
+strong{color:#15203a;}
+/* Tables */
+.table-wrap{overflow-x:auto; margin:16px 0; border:1px solid var(--line); border-radius:10px;}
+table{border-collapse:collapse; width:100%; font-size:14px; background:var(--card);}
+thead th{background:var(--brand); color:#fff; text-align:left; font-weight:600; padding:10px 12px; position:sticky; top:0;}
+tbody td{padding:9px 12px; border-top:1px solid var(--line); vertical-align:top;}
+tbody tr:nth-child(even){background:var(--soft);}
+tbody tr:hover{background:#e7eefb;}
+/* Blockquote callout */
+blockquote{margin:16px 0; padding:14px 18px; background:#fff; border-left:4px solid var(--brand-2);
+  border-radius:0 8px 8px 0; color:var(--muted); box-shadow:0 1px 2px rgba(20,40,80,.05);}
+blockquote p{margin:6px 0;}
+/* Code */
+pre{background:#0e1c33; color:#dfe9fb; padding:16px 18px; border-radius:10px; overflow-x:auto; font-size:13px; line-height:1.5;}
+code{font-family:"SFMono-Regular",Consolas,"Liberation Mono",Menlo,monospace;}
+:not(pre)>code{background:var(--soft); color:var(--code); padding:1.5px 6px; border-radius:5px; font-size:13.5px;}
+/* Task lists */
+li.task{list-style:none; margin-left:-18px; display:flex; align-items:flex-start; gap:8px;}
+li.task .box{flex:0 0 16px; width:16px; height:16px; border:1.5px solid var(--brand-2); border-radius:4px; margin-top:4px;
+  display:inline-flex; align-items:center; justify-content:center; font-size:11px; color:#fff;}
+li.task.done .box{background:var(--brand-2);}
+/* Footer */
+.footer{padding:22px 48px; color:var(--muted); font-size:13px; border-top:1px solid var(--line); background:var(--card);}
+.toc-toggle{display:none;}
+@media (max-width:980px){
+  .layout{grid-template-columns:1fr;}
+  .sidebar{position:static; height:auto; max-height:none;}
+  .hero,.main,.footer{padding-left:20px; padding-right:20px;}
+}
+@media print{
+  body{background:#fff; font-size:11.5px;}
+  .layout{display:block; max-width:none;}
+  .sidebar{display:none;}
+  .hero{background:#1f3864 !important; -webkit-print-color-adjust:exact; print-color-adjust:exact;}
+  thead th{background:#1f3864 !important; -webkit-print-color-adjust:exact; print-color-adjust:exact;}
+  .main h2{page-break-after:avoid;} table,pre,blockquote{page-break-inside:avoid;}
+}
+</style>
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar">
+    <div class="brandmark">Детский Мир — КНР</div>
+    <div class="sub">Исследование открытия офиса</div>
+    <h2>Содержание</h2>
+    <div class="toc">
+<ul>
+<li><a href="#executive-summary">Executive Summary</a></li>
+<li><a href="#1">Блок 1 — Профиль компании «Детский Мир»</a><ul>
+<li><a href="#11">1.1. Корпоративная структура и акционеры</a></li>
+<li><a href="#12">1.2. Финансовые показатели</a></li>
+<li><a href="#13-kpi">1.3. Операционные KPI</a></li>
+<li><a href="#14">1.4. Ассортиментная матрица (качественная оценка)</a></li>
+<li><a href="#15">1.5. Доля Китая в закупочном портфеле</a></li>
+<li><a href="#16">1.6. Логистическая сеть (Россия)</a></li>
+<li><a href="#17">1.7. Цифровая инфраструктура</a></li>
+<li><a href="#18-company-snapshot">1.8. Выводы для презентации (Company Snapshot)</a></li>
+</ul>
+</li>
+<li><a href="#2">Блок 2 — Анализ китайского рынка детских товаров</a><ul>
+<li><a href="#21-tam">2.1. Объём рынка (TAM)</a></li>
+<li><a href="#22-cagr-20202030">2.2. CAGR по сегментам (2020–2030)</a></li>
+<li><a href="#23">2.3. Демография</a></li>
+<li><a href="#24">2.4. Потребительские тренды</a></li>
+<li><a href="#25-e-commerce">2.5. E-commerce ландшафт</a></li>
+<li><a href="#26-tam-sam-som">2.6. TAM / SAM / SOM для «Детского Мира»</a></li>
+<li><a href="#27-market-opportunity">2.7. Выводы (Market Opportunity)</a></li>
+</ul>
+</li>
+<li><a href="#3">Блок 3 — Конкурентная среда в Китае</a><ul>
+<li><a href="#31">3.1. Локальные ритейлеры</a></li>
+<li><a href="#32">3.2. Локальные производители/бренды</a></li>
+<li><a href="#33">3.3. Международные игроки в Китае</a></li>
+<li><a href="#34-22">3.4. Матрица позиционирования (2×2)</a></li>
+<li><a href="#35-sku-overlap">3.5. SKU-overlap с «Детским Миром»</a></li>
+<li><a href="#36">3.6. Позиционирование «Детского Мира» в Китае</a></li>
+</ul>
+</li>
+<li><a href="#4">Блок 4 — Регуляторная и юридическая база</a><ul>
+<li><a href="#41">4.1. Сравнение форм присутствия</a></li>
+<li><a href="#42-ro">4.2. Процедура регистрации RO</a></li>
+<li><a href="#43">4.3. Сертификация детских товаров</a></li>
+<li><a href="#44-cbec">4.4. Таможенные режимы (CBEC)</a></li>
+<li><a href="#45">4.5. Налогообложение</a></li>
+<li><a href="#46-safe">4.6. Валютный контроль (SAFE)</a></li>
+<li><a href="#47">4.7. Трудовое право</a></li>
+<li><a href="#48">4.8. Защита ИС</a></li>
+<li><a href="#49-legal-setup">4.9. Рекомендация (Legal Setup)</a></li>
+</ul>
+</li>
+<li><a href="#5">Блок 5 — Логистика и цепочки поставок</a><ul>
+<li><a href="#51">5.1. Промышленные кластеры</a></li>
+<li><a href="#52">5.2. Логистические маршруты Китай → Россия</a></li>
+<li><a href="#53-cost-per-kg-comparison-indicative">5.3. Cost-per-kg comparison (indicative)</a></li>
+<li><a href="#54">5.4. Экономия от прямой работы с фабриками</a></li>
+<li><a href="#55-operating-model">5.5. Функции офиса (Operating Model)</a></li>
+<li><a href="#56-best-practices">5.6. Best practices (кейсы)</a></li>
+</ul>
+</li>
+<li><a href="#6">Блок 6 — Финансовая модель представительства</a><ul>
+<li><a href="#61-capex-year-0">6.1. CAPEX (Year-0)</a></li>
+<li><a href="#62-opex-annual">6.2. OPEX (Annual)</a></li>
+<li><a href="#63-indirect-parent">6.3. Доходная сторона (indirect, через parent)</a></li>
+<li><a href="#64-5-year-pl-summary">6.4. Три сценария (5-year P&amp;L summary)</a></li>
+<li><a href="#65">6.5. Чувствительность</a></li>
+<li><a href="#66">6.6. Валютные риски (хеджирование)</a></li>
+</ul>
+</li>
+<li><a href="#7">Блок 7 — Локация офиса</a><ul>
+<li><a href="#71">7.1. Сравнительная матрица</a></li>
+<li><a href="#72">7.2. Свободные экономические зоны</a></li>
+<li><a href="#73">7.3. Кейсы российских компаний</a></li>
+<li><a href="#74">7.4. Рекомендация</a></li>
+</ul>
+</li>
+<li><a href="#8">Блок 8 — Риски и митигация</a><ul>
+<li><a href="#81-risk-map-probability-impact">8.1. Risk Map (Probability × Impact)</a></li>
+<li><a href="#82-rubcny">8.2. RUB/CNY — исторический коридор</a></li>
+<li><a href="#83-top-5">8.3. Top-5 рисков с планом митигации</a></li>
+</ul>
+</li>
+<li><a href="#9">Блок 9 — Библиография и источники</a><ul>
+<li><a href="#_3">Корпоративные (Детский Мир)</a></li>
+<li><a href="#_4">Рынок Китая</a></li>
+<li><a href="#_5">Конкуренты</a></li>
+<li><a href="#_6">Регуляторика</a></li>
+<li><a href="#_7">Логистика</a></li>
+<li><a href="#hr">Недвижимость и HR</a></li>
+<li><a href="#_8">Кейсы</a></li>
+</ul>
+</li>
+<li><a href="#10">Блок 10 — Дорожная карта (рекомендуемая)</a><ul>
+<li><a href="#post-approval">Фазы запуска (post-approval)</a></li>
+</ul>
+</li>
+<li><a href="#_9">Приложение А — Ключевые рекомендации для презентации</a></li>
+<li><a href="#_10">Приложение Б — Открытые вопросы для внутренней валидации</a></li>
+</ul>
+</div>
+
+  </aside>
+  <div class="content">
+    <header class="hero">
+      <h1>Исследование «Детский Мир» — открытие представительства в КНР</h1>
+      <div class="tagline">Desk research по открытию присутствия «Детского Мира» в КНР: рынок, конкуренты, право, логистика, финансовая модель, риски и дорожная карта.</div>
+      <div class="pills"><span class="pill">Горизонт 2022–2030</span><span class="pill">10 блоков</span><span class="pill">Desk research</span><span class="pill">Sourcing + QC</span><span class="pill">Финансовая модель</span></div>
+    </header>
+    <main class="main">
+      <blockquote>
+<p><strong>Тип документа:</strong> отчёт по результатам desk research по блокам 1–8 плана исследования<br />
+<strong>Дата:</strong> 26 мая 2026<br />
+<strong>Горизонт данных:</strong> 2022–2026, прогноз до 2030<br />
+<strong>Методология:</strong> анализ открытых источников (годовые отчёты, пресс-релизы, отраслевые отчёты Китая, консалтинговые материалы, таможенная и рыночная статистика)<br />
+<strong>Статус:</strong> предварительный; финансовая модель требует валидации внутренними данными закупочного блока «Детского Мира»</p>
+</blockquote>
+<hr />
+<h2 id="executive-summary">Executive Summary</h2>
+<p><strong>Ключевая рекомендация:</strong> открыть <strong>представительство (RO, 常驻代表机构)</strong> в <strong>Гуанчжоу</strong> с <strong>sourcing-офисом в Шэньчжэне/Чэнхай (Шаньтоу)</strong> как гибридную модель «HQ + полевой sourcing».</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Значение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Форма присутствия (фаза 1)</td>
+<td>Representative Office (RO)</td>
+</tr>
+<tr>
+<td>Рекомендуемая локация</td>
+<td>Гуанчжоу (офис) + Чэнхай/Шэньчжэнь (QC/sourcing)</td>
+</tr>
+<tr>
+<td>CAPEX year-0</td>
+<td>USD 60–90 тыс.</td>
+</tr>
+<tr>
+<td>OPEX (годовой, base)</td>
+<td>USD 250–320 тыс.</td>
+</tr>
+<tr>
+<td>Целевая экономия на закупках</td>
+<td>8–12% от addressable China-sourcing (~RUB 1,5–3,0 млрд/год)*</td>
+</tr>
+<tr>
+<td>Payback (base)</td>
+<td>18–30 месяцев</td>
+</tr>
+<tr>
+<td>Горизонт до WFOE</td>
+<td>24–36 мес. (при выходе в B2B/B2C)</td>
+</tr>
+</tbody>
+</table></div>
+<p><em>*Расчёт на основе экстраполяции публичных данных; требует подтверждения Finance/Procurement.</em></p>
+<p><strong>Три столпа обоснования:</strong></p>
+<ol>
+<li><strong>Sourcing hub</strong> — прямой доступ к 50 000+ производителей игрушек и текстиля в Гуандуне/Чжэцзяне; снятие агентской маржи 5–15%.</li>
+<li><strong>Brand access</strong> — окно в экосистему китайских брендов новой волны (Kidswant-модель СТМ, Pop Mart/IP, BabyCare) для эксклюзивов на рынке РФ/СНГ.</li>
+<li><strong>Optionality</strong> — платформа для долгосрочного B2B-партнёрства и нишевого B2C без немедленных CAPEX WFOE.</li>
+</ol>
+<hr />
+<h2 id="1">Блок 1 — Профиль компании «Детский Мир»</h2>
+<h3 id="11">1.1. Корпоративная структура и акционеры</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Событие</th>
+<th>Дата</th>
+<th>Суть</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Запуск трансформации в частный бизнес</td>
+<td>2022</td>
+<td>Решение акционеров о выходе с MOEX</td>
+</tr>
+<tr>
+<td>Реорганизация: выделение ООО «ДМ»</td>
+<td>Сентябрь 2023</td>
+<td>Операционное юрлицо отделено от ПАО</td>
+</tr>
+<tr>
+<td>Делистинг с MOEX</td>
+<td>Февраль 2024</td>
+<td>Ликвидация публичной оболочки ПАО</td>
+</tr>
+<tr>
+<td>Последний день торгов акциями</td>
+<td>Октябрь 2024</td>
+<td>Полное прекращение листинга</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Структура акционеров (по открытым данным, 2024–2026):</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Акционер</th>
+<th>Доля</th>
+<th>Комментарий</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Консорциум во главе с Алексеем Зуевым (основатель «Кораблик»)</td>
+<td>29,9%</td>
+<td>Приобретено в мае 2023</td>
+</tr>
+<tr>
+<td>АО «ДМ-финансовые активы» (ДМФА)</td>
+<td>63,34% (на 10.01.2024)</td>
+<td>Конечные бенефициары в ЕГРЮЛ не раскрыты</td>
+</tr>
+<tr>
+<td>Прочие акционеры</td>
+<td>~6,8%</td>
+<td>Миноритарии, не принявшие оферту</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Операционная компания:</strong> ООО «ДМ» (100% владение через реорганизацию). Группа включает сети «Детский мир», «Детмир мини», «Зоозавр», «Ещё», e-commerce detmir.ru.</p>
+<h3 id="12">1.2. Финансовые показатели</h3>
+<h4 id="_1">Публичный период (МСФО, последние раскрытия)</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Показатель</th>
+<th>2021</th>
+<th>2022 (оценка*)</th>
+<th>Комментарий</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Выручка</td>
+<td>RUB 164,3 млрд (+15%)</td>
+<td>~RUB 178 млрд</td>
+<td>*2022 — экстраполяция квартальных данных</td>
+</tr>
+<tr>
+<td>Скорр. EBITDA</td>
+<td>RUB 18,0 млрд (11,0%)</td>
+<td>~RUB 17 млрд</td>
+<td>Снижение маржи на фоне макрошока</td>
+</tr>
+<tr>
+<td>Валовая маржа</td>
+<td>~32%</td>
+<td>~30%</td>
+<td>Рост доли СТМ/прямого импорта</td>
+</tr>
+<tr>
+<td>Чистая прибыль</td>
+<td>RUB 7,3 млрд</td>
+<td>n/a</td>
+<td>Q1 2022: убыток RUB 517 млн</td>
+</tr>
+<tr>
+<td>Net Debt/EBITDA</td>
+<td>n/a</td>
+<td>1,7x (Q1 2022)</td>
+<td>Чистый долг RUB 31,2 млрд</td>
+</tr>
+</tbody>
+</table></div>
+<h4 id="2024">Частный период (ООО «ДМ», СПАРК, 2024)</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Показатель</th>
+<th>2024</th>
+<th>Δ YoY</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Выручка</td>
+<td>RUB 224,8 млрд</td>
+<td>×1,6</td>
+</tr>
+<tr>
+<td>Чистая прибыль</td>
+<td>RUB 56,9 млрд</td>
+<td>×5</td>
+</tr>
+</tbody>
+</table></div>
+<p><em>Примечание: рост 2024 может отражать консолидацию структуры после реорганизации; требует сверки с Management.</em></p>
+<h3 id="13-kpi">1.3. Операционные KPI</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Метрика</th>
+<th>Значение</th>
+<th>Период</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Количество магазинов</td>
+<td>1 125 → <strong>1 900+</strong></td>
+<td>Q1 2022 → август 2025</td>
+</tr>
+<tr>
+<td>География</td>
+<td>Россия, Казахстан, Беларусь</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Торговая площадь</td>
+<td>982 тыс. м²</td>
+<td>Q1 2022</td>
+</tr>
+<tr>
+<td>LFL (сопоставимые продажи)</td>
+<td>−2,1% (Q1 2022); ~−40% (2022, оценка)</td>
+<td>Волатильность из-за COVID и макрошока</td>
+</tr>
+<tr>
+<td>Доля онлайн-канала</td>
+<td>32% → 36% → <strong>~40%</strong></td>
+<td>Q1 2022 → Q4 2021 → 2022</td>
+</tr>
+<tr>
+<td>Доля маркетплейсов в онлайне</td>
+<td>8,7% (Q1 2022)</td>
+<td>Рост ×2+ г/г</td>
+</tr>
+<tr>
+<td>Доля СТМ + прямой импорт</td>
+<td>44,8% → <strong>56,7%</strong></td>
+<td>Q1 → H1 2022</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="14">1.4. Ассортиментная матрица (качественная оценка)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Категория</th>
+<th>Оценка доли в выручке</th>
+<th>Китайская компонента закупок</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Игрушки</td>
+<td>~25–30%</td>
+<td><strong>Очень высокая</strong> (70% мирового производства — Китай)</td>
+</tr>
+<tr>
+<td>Одежда/обувь</td>
+<td>~20–25%</td>
+<td><strong>Высокая</strong> (Фуцзянь, Гуандун, Чжэцзян)</td>
+</tr>
+<tr>
+<td>Питание/БТ</td>
+<td>~15–20%</td>
+<td>Средняя (локализация, но компоненты/упаковка — Китай)</td>
+</tr>
+<tr>
+<td>Гигиена/уход</td>
+<td>~15%</td>
+<td>Средняя–высокая</td>
+</tr>
+<tr>
+<td>Коляски/мебель</td>
+<td>~10%</td>
+<td>Высокая (Goodbaby-кластер, Цзянсу)</td>
+</tr>
+<tr>
+<td>Прочее (канц, спорт)</td>
+<td>~10%</td>
+<td>Высокая</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>СТМ-бренды:</strong> PetitMain, Yokki, Mothercare (лицензия), Minimen, Futurino и др. Доля СТМ+импорт &gt;50% — стратегический приоритет компании.</p>
+<h3 id="15">1.5. Доля Китая в закупочном портфеле</h3>
+<p><strong>Прямых раскрытий нет.</strong> Экспертная оценка на базе отраслевых данных:</p>
+<ul>
+<li>Китай производит <strong>~70%</strong> мировых пластиковых игрушек (район Чэнхай, Шаньтоу).</li>
+<li>Доля СТМ + прямого импорта «Детского Мира» — <strong>45–57%</strong> продаж (2022).</li>
+<li><strong>Оценка доли Китая в закупках: 30–45%</strong> от общего COGS (RUB 50–70 млрд при выручке ~RUB 225 млрд).</li>
+</ul>
+<h3 id="16">1.6. Логистическая сеть (Россия)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Масштаб</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Распределительные центры</td>
+<td>Сеть РЦ по России (точное число — внутренние данные)</td>
+</tr>
+<tr>
+<td>Dark stores / быстрая доставка</td>
+<td>Развитие с 2021–2022</td>
+</tr>
+<tr>
+<td>ПВЗ</td>
+<td>Интеграция с e-commerce</td>
+</tr>
+<tr>
+<td>Last-mile</td>
+<td>Собственная + партнёрская логистика, маркетплейсы</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="17">1.7. Цифровая инфраструктура</h3>
+<ul>
+<li><strong>E-commerce:</strong> detmir.ru, мобильное приложение (основной драйвер онлайн-трафика +22,5% в Q1 2022).</li>
+<li><strong>Маркетплейсы:</strong> растущая доля (Wildberries, Ozon, Яндекс.Маркет).</li>
+<li><strong>Программа лояльности:</strong> «Бонусная карта Детский мир».</li>
+<li><strong>CDP/CRM:</strong> внутренняя платформа (детали не раскрыты).</li>
+</ul>
+<h3 id="18-company-snapshot">1.8. Выводы для презентации (Company Snapshot)</h3>
+<p>«Детский Мир» — <strong>крупнейший специализированный ритейлер детских товаров</strong> в России/СНГ с выручкой <strong>&gt;RUB 220 млрд</strong>, <strong>1 900+</strong> точек, <strong>~40%</strong> онлайна и стратегией на <strong>СТМ + прямой импорт (&gt;50%)</strong>. Китай — <strong>критический источник</strong> для игрушек, одежды и аксессуаров. После делистинга (2024) компания <strong>частная</strong>, что упрощает принятие решений по международной экспансии без давления публичных рынков.</p>
+<hr />
+<h2 id="2">Блок 2 — Анализ китайского рынка детских товаров</h2>
+<h3 id="21-tam">2.1. Объём рынка (TAM)</h3>
+<h4 id="20242026">Совокупная оценка (2024–2026)</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Сегмент</th>
+<th>Объём 2024</th>
+<th>CAGR (прогноз)</th>
+<th>Источник</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Игрушки (без 潮玩)</td>
+<td>CNY 97,85 млрд (~USD 13,5 млрд)</td>
+<td>+7,9% (2024)</td>
+<td>Китайская ассоциация игрушек, White Paper 2025</td>
+</tr>
+<tr>
+<td>Игрушки (kids toys, alt.)</td>
+<td>USD 7,47 млрд (2024) → USD 14,24 млрд (2033)</td>
+<td><strong>7,46%</strong> (2025–2033)</td>
+<td>Deep Market Insights</td>
+</tr>
+<tr>
+<td>潮玩/коллекционные</td>
+<td>CNY 46,57 млрд (+)</td>
+<td>Двузначный</td>
+<td>White Paper 2025</td>
+</tr>
+<tr>
+<td>Детская одежда</td>
+<td>USD 53,92 млрд (2023) → USD 79,66 млрд (2028)</td>
+<td><strong>8,12%</strong></td>
+<td>Mordor Intelligence / CBME</td>
+</tr>
+<tr>
+<td>Baby products (широкий)</td>
+<td>~32% APAC = ~USD 50 млрд (2025)</td>
+<td><strong>6,4%</strong> (2026–2033)</td>
+<td>Grand View Research</td>
+</tr>
+<tr>
+<td>Детские коляски</td>
+<td>CNY 16,98 млрд</td>
+<td>+17,5% (2024)</td>
+<td>White Paper 2025</td>
+</tr>
+<tr>
+<td>Автокресла</td>
+<td>CNY 5,47 млрд</td>
+<td>+13,2% (2024)</td>
+<td>White Paper 2025</td>
+</tr>
+<tr>
+<td>Бутылочки</td>
+<td>CNY 7,36 млрд</td>
+<td>+8,1% (2024)</td>
+<td>White Paper 2025</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Суммарный TAM (Baby &amp; Kids, Китай): ~CNY 350–400 млрд (~USD 48–55 млрд) в 2024–2025.</strong></p>
+<h4 id="-">Онлайн-канал</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Метрика</th>
+<th>Значение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Доля e-commerce в baby &amp; child care</td>
+<td><strong>50–60%</strong> розничных продаж</td>
+</tr>
+<tr>
+<td>Онлайн-рынок материнство/детство (2025)</td>
+<td><strong>CNY 223,78 млрд</strong> (+12,6% YoY)</td>
+</tr>
+<tr>
+<td>Доля онлайна в категории (2023→2025)</td>
+<td>35,1% → <strong>46,1%</strong> (+11 п.п.)</td>
+</tr>
+<tr>
+<td>Прогноз доминирования e-commerce</td>
+<td><strong>2027–2028</strong> (обгон offline)</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="22-cagr-20202030">2.2. CAGR по сегментам (2020–2030)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Сегмент</th>
+<th>CAGR</th>
+<th>Драйверы</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Игрушки</td>
+<td>7–8%</td>
+<td>STEM, premiumization, IP/коллекционки</td>
+</tr>
+<tr>
+<td>Детская одежда</td>
+<td>8%</td>
+<td>Diversification, accessories</td>
+</tr>
+<tr>
+<td>Детское питание</td>
+<td>4–6%</td>
+<td>Safety, traceability, premium formula</td>
+</tr>
+<tr>
+<td>Baby care (уход)</td>
+<td>6–8%</td>
+<td>Premiumization, domestic brands</td>
+</tr>
+<tr>
+<td>Образовательные (STEM)</td>
+<td>10–15%</td>
+<td>Education anxiety, policy support</td>
+</tr>
+<tr>
+<td>潮玩/Kidult</td>
+<td>15–25%</td>
+<td>Pop Mart-эффект, 25–40 лет аудитория</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="23">2.3. Демография</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Показатель</th>
+<th>2024</th>
+<th>2025</th>
+<th>Тренд</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Рождаемость</td>
+<td>9,54 млн (+520 тыс.)</td>
+<td><strong>7,9 млн</strong></td>
+<td>Рост 2024 — «год Дракона»; 2025 — рекордное падение</td>
+</tr>
+<tr>
+<td>Birth rate</td>
+<td>6,77‰</td>
+<td><strong>5,6‰</strong> (рекордный минимум)</td>
+<td>—</td>
+</tr>
+<tr>
+<td>TFR (суммарный коэффициент)</td>
+<td>~1,0</td>
+<td><strong>~0,98</strong></td>
+<td>Ниже порога воспроизводства</td>
+</tr>
+<tr>
+<td>Население</td>
+<td>1,408 млрд</td>
+<td>1,405 млрд</td>
+<td>4-й год сокращения</td>
+</tr>
+<tr>
+<td>Женщины детородного возраста</td>
+<td>213,7 млн</td>
+<td>−13% за 10 лет</td>
+<td>Структурный фактор</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Политика «трёх детей» (三孩政策, 2021):</strong> субсидии CNY 3 600/год на ребёнка до 3 лет (2025), налоговые льготы, расширение childcare — <strong>не дали устойчивого эффекта</strong> (аналогия с Сингапуром, TFR 0,87).</p>
+<p><strong>Региональные различия:</strong></p>
+<ul>
+<li>Tier 1 (上海, 北京, 深圳): низкая рождаемость, высокий ARPU, premiumization.</li>
+<li>Tier 3–5 (下沉市场): рост потребления, price-sensitive, social commerce (Pinduoduo, Douyin).</li>
+<li>Закрытие <strong>25%</strong> детсадов (2020–2024) из-за падения рождаемости — давление на baby-инфраструктуру, но <strong>расширение возрастного охвата</strong> (0–12 лет) компенсирует.</li>
+</ul>
+<h3 id="24">2.4. Потребительские тренды</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Тренд</th>
+<th>Описание</th>
+<th>Релевантность для «Детского Мира»</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Premiumization / 小皇帝</strong></td>
+<td>Родители тратят на «единственного ребёнка»</td>
+<td>Импорт premium + СТМ upper-mid</td>
+</tr>
+<tr>
+<td><strong>Safety-first</strong></td>
+<td>GB-стандарты, CCC, traceability</td>
+<td>QC-офис в Китае — must have</td>
+</tr>
+<tr>
+<td><strong>国潮 (Guochao)</strong></td>
+<td>Патриотические локальные бренды</td>
+<td>Партнёрство с Chinese brands для РФ</td>
+</tr>
+<tr>
+<td><strong>下沉市场 (Siagén)</strong></td>
+<td>Tier 3–5 города — новый рост</td>
+<td>Модель Kidswant «千城万店»</td>
+</tr>
+<tr>
+<td><strong>Kidult / 潮玩</strong></td>
+<td>25–40 лет, коллекционки (Pop Mart)</td>
+<td>Новая категория для DM</td>
+</tr>
+<tr>
+<td><strong>Trading up + pragmatism</strong></td>
+<td>Качество + value for money</td>
+<td>СТМ-стратегия DM резонирует</td>
+</tr>
+<tr>
+<td><strong>Live commerce</strong></td>
+<td>Douyin/Kuaishou — discovery</td>
+<td>Benchmark для будущего B2C</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="25-e-commerce">2.5. E-commerce ландшафт</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Платформа</th>
+<th>Роль в baby/kids</th>
+<th>Доля/динамика</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tmall/Taobao</strong></td>
+<td>Replenishment, широкий ассортимент</td>
+<td>Лидер по SKU; замедление роста</td>
+</tr>
+<tr>
+<td><strong>JD.com</strong></td>
+<td>Trust, быстрая доставка, premium</td>
+<td>2,5 млрд users; +14% sales, +20% orders (2024)</td>
+</tr>
+<tr>
+<td><strong>Pinduoduo</strong></td>
+<td>Value tier, Tier 3–5</td>
+<td>Price-sensitive segment</td>
+</tr>
+<tr>
+<td><strong>Douyin Shop</strong></td>
+<td>Discovery, live commerce, impulse</td>
+<td>+52–112% в baby care (2024)</td>
+</tr>
+<tr>
+<td><strong>Kuaishou</strong></td>
+<td>Social commerce, lower-tier cities</td>
+<td>Растущий канал discovery</td>
+</tr>
+<tr>
+<td><strong>Xiaohongshu (RedNote)</strong></td>
+<td>Community, UGC, brand trust</td>
+<td>Критичен для brand building</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Структура онлайн baby care (2024):</strong></p>
+<ul>
+<li>Douyin: CNY 69,31 млрд (+52,5%)</li>
+<li>Taobao + JD: CNY 116,22 млрд (+5,3%)</li>
+<li><strong>Итого top-3:</strong> CNY 185,53 млрд (+21,8%)</li>
+</ul>
+<h3 id="26-tam-sam-som">2.6. TAM / SAM / SOM для «Детского Мира»</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Уровень</th>
+<th>Определение</th>
+<th>Оценка</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>TAM</strong></td>
+<td>Весь рынок детских товаров Китая</td>
+<td>~USD 50–55 млрд</td>
+</tr>
+<tr>
+<td><strong>SAM</strong></td>
+<td>Закупки + потенциальный B2B (бренды → РФ/СНГ)</td>
+<td>~USD 5–8 млрд (addressable procurement)</td>
+</tr>
+<tr>
+<td><strong>SOM</strong> (5 лет)</td>
+<td>Реалистичная доля DM</td>
+<td>USD 50–150 млн (закупки) + B2B optionality</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="27-market-opportunity">2.7. Выводы (Market Opportunity)</h3>
+<p>Китай — <strong>крупнейший производитель и потребитель</strong> детских товаров с TAM <strong>&gt;USD 50 млрд</strong>. Несмотря на <strong>демографический спад</strong>, рынок растёт за счёт <strong>premiumization, расширения возрастного охвата (0–12) и e-commerce (+12,6% онлайн в 2025)</strong>. Для «Детского Мира» Китай критичен как <strong>sourcing base</strong> (70% игрушек) и как <strong>источник брендов/IP</strong> для дифференциации на домашнем рынке.</p>
+<hr />
+<h2 id="3">Блок 3 — Конкурентная среда в Китае</h2>
+<h3 id="31">3.1. Локальные ритейлеры</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Компания</th>
+<th>Ticker</th>
+<th>Выручка 2024/2025</th>
+<th>Магазины</th>
+<th>Онлайн</th>
+<th>Ключевые KPI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Kidswant 孩子王</strong></td>
+<td>301078.SZ</td>
+<td>CNY 93,4 млрд (2024) → <strong>CNY 102,7 млрд (2025)</strong></td>
+<td>1 046 (2024)</td>
+<td>45,5%</td>
+<td>СТМ 7,5%; diff. supply chain 12,3%; O2O +10,7%</td>
+</tr>
+<tr>
+<td><strong>Aiyingshi 爱婴室</strong></td>
+<td>603214.SS</td>
+<td>~CNY 3 млрд</td>
+<td>~500</td>
+<td>n/a</td>
+<td>Offline-focused, East China</td>
+</tr>
+<tr>
+<td><strong>BabeMax 贝贝网</strong></td>
+<td>Private</td>
+<td>n/a</td>
+<td>Online-only</td>
+<td>100%</td>
+<td>Marketplace model</td>
+</tr>
+<tr>
+<td><strong>Lovekids</strong></td>
+<td>Private</td>
+<td>n/a</td>
+<td>Regional</td>
+<td>n/a</td>
+<td>Niche player</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Kidswant — ключевой benchmark:</strong></p>
+<ul>
+<li>Стратегия <strong>«三扩»</strong> (расширение категорий, каналов, форматов).</li>
+<li><strong>Short-chain sourcing:</strong> 177 прямых поставщиков, 1 200+ новых SKU.</li>
+<li><strong>Instant retail:</strong> 23 warehouse-stores в 9 городах.</li>
+<li>План: <strong>«千城万店»</strong> (тысячи городов, десятки тысяч магазинов) + AI.</li>
+</ul>
+<h3 id="32">3.2. Локальные производители/бренды</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Компания</th>
+<th>Сегмент</th>
+<th>Выручка 2024</th>
+<th>Позиция</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Goodbaby 好孩子</strong></td>
+<td>Kolyaski, car seats, strollers</td>
+<td>HKD 8,77 млрд (+10,6%)</td>
+<td>Global #1 в strollers; CYBEX +20,8%</td>
+</tr>
+<tr>
+<td><strong>BabyCare (Babycare)</strong></td>
+<td>Premium baby care, diapers</td>
+<td>Private, est. CNY 5+ млрд</td>
+<td>DTC + online leader</td>
+</tr>
+<tr>
+<td><strong>ABC Kids</strong></td>
+<td>Обувь/одежда</td>
+<td>Private</td>
+<td>Mass market</td>
+</tr>
+<tr>
+<td><strong>Beingmate 贝因美</strong></td>
+<td>Formula</td>
+<td>Public</td>
+<td>Post-scandal recovery</td>
+</tr>
+<tr>
+<td><strong>Feihe 飞鹤</strong></td>
+<td>Formula (premium)</td>
+<td>Public</td>
+<td>#1 domestic formula</td>
+</tr>
+<tr>
+<td><strong>Pop Mart 泡泡玛特</strong></td>
+<td>Designer toys, IP</td>
+<td>CNY 13,0 млрд (+106,9%)</td>
+<td>Labubu global phenomenon</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="33">3.3. Международные игроки в Китае</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Бренд</th>
+<th>Статус в Китае</th>
+<th>Релевантность</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Mothercare</strong></td>
+<td>Лицензия (нет прямого присутствия)</td>
+<td>DM уже использует бренд</td>
+</tr>
+<tr>
+<td><strong>Carter's, Gap Kids</strong></td>
+<td>Через Tmall/JD</td>
+<td>Premium mid-market</td>
+</tr>
+<tr>
+<td><strong>LEGO</strong></td>
+<td>Сильное присутствие</td>
+<td>Premium toys</td>
+</tr>
+<tr>
+<td><strong>Hasbro, Mattel, Fisher-Price</strong></td>
+<td>Через дистрибьюторов</td>
+<td>Mass premium</td>
+</tr>
+<tr>
+<td><strong>Pop Mart</strong></td>
+<td>Доминирует в 潮玩</td>
+<td>Trend-setter</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="34-22">3.4. Матрица позиционирования (2×2)</h3>
+<pre><code>                    PREMIUM
+                       │
+         Pop Mart ●    │    ● Feihe
+         BabyCare ●    │    ● LEGO
+                       │
+    NICHE ─────────────┼───────────── MASS MARKET
+                       │
+         Kidswant ●    │    ● ABC Kids
+         Goodbaby ●    │    ● Beingmate
+                       │
+                    VALUE
+</code></pre>
+<h3 id="35-sku-overlap">3.5. SKU-overlap с «Детским Миром»</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Категория DM</th>
+<th>Overlap с CN-игроками</th>
+<th>Возможность дифференциации</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Игрушки</td>
+<td><strong>Высокий</strong> (Чэнхай OEM)</td>
+<td>Эксклюзивные IP, 潮玩, СТМ</td>
+</tr>
+<tr>
+<td>Одежда СТМ</td>
+<td>Средний</td>
+<td>PetitMain vs ABC Kids — разные рынки</td>
+</tr>
+<tr>
+<td>Коляски/автокресла</td>
+<td><strong>Высокий</strong> (Goodbaby OEM)</td>
+<td>Прямые контракты с OEM</td>
+</tr>
+<tr>
+<td>Formula/питание</td>
+<td>Низкий (регуляторика РФ)</td>
+<td>Нишевый импорт</td>
+</tr>
+<tr>
+<td>Baby care</td>
+<td>Средний</td>
+<td>BabyCare-style premium СТМ</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="36">3.6. Позиционирование «Детского Мира» в Китае</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Роль</th>
+<th>Описание</th>
+<th>Горизонт</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>(a) Закупочный хаб</strong></td>
+<td>RO для sourcing, QC, переговоров с OEM/ODM</td>
+<td>0–24 мес.</td>
+</tr>
+<tr>
+<td><strong>(b) B2B-партнёр</strong></td>
+<td>Эксклюзивный дистрибьютор CN-брендов в РФ/СНГ</td>
+<td>12–36 мес.</td>
+</tr>
+<tr>
+<td><strong>(c) Нишевый B2C</strong></td>
+<td>Tmall Global / CBEC pilot (через партнёра)</td>
+<td>36+ мес.</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Конкурентное преимущество DM:</strong> крупнейшая специализированная сеть в РФ/СНГ (1 900+ точек) — <strong>уникальный канал сбыта</strong> для китайских брендов, ищущих экспортные рынки post-sanctions.</p>
+<hr />
+<h2 id="4">Блок 4 — Регуляторная и юридическая база</h2>
+<h3 id="41">4.1. Сравнение форм присутствия</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Критерий</th>
+<th>RO (代表机构)</th>
+<th>WFOE (外商独资)</th>
+<th>JV (合资)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Правосубъектность</strong></td>
+<td>Нет (отделение parent)</td>
+<td>Полная</td>
+<td>Полная</td>
+</tr>
+<tr>
+<td><strong>Выручка</strong></td>
+<td>❌ Запрещена</td>
+<td>✅ Полная</td>
+<td>✅ Полная</td>
+</tr>
+<tr>
+<td><strong>Срок регистрации</strong></td>
+<td><strong>6–10 недель</strong></td>
+<td>2–6 месяцев</td>
+<td>3–8 месяцев</td>
+</tr>
+<tr>
+<td><strong>Уставный капитал</strong></td>
+<td>Не требуется</td>
+<td>RMB 100k–1,5M (scope-dependent)</td>
+<td>По согласованию</td>
+</tr>
+<tr>
+<td><strong>Стоимость setup</strong></td>
+<td><strong>USD 3–7 тыс.</strong></td>
+<td>USD 15–50 тыс.</td>
+<td>USD 20–60 тыс.</td>
+</tr>
+<tr>
+<td><strong>OPEX (годовой)</strong></td>
+<td>USD 200–350 тыс.</td>
+<td>USD 400–800 тыс.</td>
+<td>USD 500–1M</td>
+</tr>
+<tr>
+<td><strong>Налоги</strong></td>
+<td>~10% на расходы (RO tax)</td>
+<td>CIT 25% (HNTE: 15%)</td>
+<td>CIT 25%</td>
+</tr>
+<tr>
+<td><strong>Подходит для DM</strong></td>
+<td>✅ <strong>Фаза 1</strong></td>
+<td>Фаза 2 (B2B/B2C)</td>
+<td>Не рекомендуется</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Рекомендация:</strong> начать с <strong>RO</strong> → через 24–36 мес. оценить переход на <strong>WFOE</strong> (trading scope) при запуске B2B-продаж.</p>
+<h3 id="42-ro">4.2. Процедура регистрации RO</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Шаг</th>
+<th>Орган</th>
+<th>Срок</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. Notarization/apostille документов parent</td>
+<td>Home country + China</td>
+<td>2–3 недели</td>
+</tr>
+<tr>
+<td>2. Name pre-approval</td>
+<td>SAMR (local AIC)</td>
+<td>2–3 дня</td>
+</tr>
+<tr>
+<td>3. Registration certificate</td>
+<td>SAMR</td>
+<td>10–15 рабочих дней</td>
+</tr>
+<tr>
+<td>4. Chops (seals)</td>
+<td>Public Security</td>
+<td>3 дня</td>
+</tr>
+<tr>
+<td>5. Tax registration</td>
+<td>Local tax bureau</td>
+<td>30 дней</td>
+</tr>
+<tr>
+<td>6. Bank account (SAFE)</td>
+<td>Bank of China / ICBC</td>
+<td>1–2 недели</td>
+</tr>
+<tr>
+<td>7. Foreign staff work permit (Z visa)</td>
+<td>MPS / HR bureau</td>
+<td>4–6 недель</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Требования:</strong></p>
+<ul>
+<li>Parent company — <strong>минимум 2 года</strong> существования ✅ (Детский Мир — с 2017 IPO, группа старше).</li>
+<li>Annual report RO — до <strong>30 июня</strong> каждого года.</li>
+</ul>
+<p><strong>Изменения 2024–2025:</strong></p>
+<ul>
+<li>Negative List сокращён до <strong>29 пунктов</strong>; manufacturing — <strong>0 ограничений</strong>.</li>
+<li>Company Law (1 июля 2024): <strong>5 лет</strong> на paid-in capital для новых WFOE.</li>
+<li>Hague Apostille (с ноября 2023): упрощение легализации документов.</li>
+</ul>
+<h3 id="43">4.3. Сертификация детских товаров</h3>
+<h4 id="ccc">CCC (中国强制性产品认证)</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Категория</th>
+<th>Стандарты</th>
+<th>Обязательность</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Электрические игрушки</td>
+<td>GB 6675.1–4 + GB 19865</td>
+<td>✅ CCC</td>
+</tr>
+<tr>
+<td>Пластиковые игрушки</td>
+<td>GB 6675.1–4</td>
+<td>✅ CCC</td>
+</tr>
+<tr>
+<td>Металлические игрушки</td>
+<td>GB 6675.1–4</td>
+<td>✅ CCC</td>
+</tr>
+<tr>
+<td>Куклы</td>
+<td>GB 6675.1–4</td>
+<td>✅ CCC</td>
+</tr>
+<tr>
+<td>Ride-on</td>
+<td>GB 6675.1–4 + GB 19865</td>
+<td>✅ CCC</td>
+</tr>
+<tr>
+<td>Прочие игрушки</td>
+<td>GB 6675.1–4</td>
+<td>Testing (voluntary CCC)</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>GB 6675-2014</strong> (4 части): basic safety, mechanical/physical, flammability, chemical migration.</p>
+<h4 id="_2">Прочие стандарты</h4>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Стандарт</th>
+<th>Категория</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GB 31701</td>
+<td>Детская одежда (безопасность)</td>
+</tr>
+<tr>
+<td>GB 14748</td>
+<td>Детские коляски</td>
+</tr>
+<tr>
+<td>GB 27887</td>
+<td>Автокресла</td>
+</tr>
+<tr>
+<td>GB 5296.5</td>
+<td>Labeling (игрушки)</td>
+</tr>
+<tr>
+<td>GB 10765–10767</td>
+<td>Infant formula (NMPA)</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Для экспорта в РФ:</strong> CCC/GB — baseline; дополнительно EAC/TR CU, сертификация РФ.</p>
+<h3 id="44-cbec">4.4. Таможенные режимы (CBEC)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Режим</th>
+<th>Код</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bonded import</td>
+<td><strong>1210</strong></td>
+<td>Import в bonded zone → online sale</td>
+</tr>
+<tr>
+<td>Direct shipping</td>
+<td><strong>9610</strong></td>
+<td>Cross-border direct to consumer</td>
+</tr>
+<tr>
+<td>Positive List</td>
+<td>—</td>
+<td><strong>1 476 категорий</strong> (обновление март 2022)</td>
+</tr>
+<tr>
+<td>Лимит транзакции</td>
+<td>CNY 5 000/заказ, CNY 26 000/год/перс.</td>
+<td>—</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Bonded warehouses:</strong> Hangzhou, Zhengzhou, Ningbo, Guangzhou Nansha.</p>
+<p><strong>Для DM (фаза 1):</strong> CBEC не приоритет; фокус на <strong>general trade export</strong> (Китай → РФ).</p>
+<h3 id="45">4.5. Налогообложение</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Налог</th>
+<th>Ставка</th>
+<th>Комментарий</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CIT (corporate)</td>
+<td>25% (15% HNTE)</td>
+<td>RO: deemed profit method ~10% on expenses</td>
+</tr>
+<tr>
+<td>VAT</td>
+<td>13% / 9% / 6%</td>
+<td>Export: 0% VAT (refund)</td>
+</tr>
+<tr>
+<td>Dividend WHT</td>
+<td><strong>10%</strong> (СОИДН РФ–КНР)</td>
+<td>5% при ≥25% ownership ≥365 дней</td>
+</tr>
+<tr>
+<td>RO tax</td>
+<td>~10% of expenses (deemed)</td>
+<td>Альтернатива: actual cost + markup</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="46-safe">4.6. Валютный контроль (SAFE)</h3>
+<ul>
+<li>Открытие счетов: <strong>Bank of China, ICBC, China Construction Bank</strong> — наиболее опытны с foreign entities.</li>
+<li>Репатриация: через <strong>parent company invoicing</strong> (management fee, service agreement).</li>
+<li><strong>2024–2025:</strong> китайские банки открывают счета российским компаниям (с due diligence); расчёты в <strong>CNY</strong> предпочтительны.</li>
+</ul>
+<h3 id="47">4.7. Трудовое право</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Требование</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Z visa</td>
+<td>Для foreign employees (chief representative)</td>
+</tr>
+<tr>
+<td>Work permit</td>
+<td>4–6 недель processing</td>
+</tr>
+<tr>
+<td>Local hires</td>
+<td>Unlimited; labor contract по PRC Labor Law</td>
+</tr>
+<tr>
+<td>Social insurance</td>
+<td>Обязательно для local staff (~30–40% on top of salary)</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="48">4.8. Защита ИС</h3>
+<ul>
+<li>Регистрация TM «Детский Мир», PetitMain, Yokki и др. в <strong>CNIPA</strong> — <strong>критично до начала sourcing</strong> (first-to-file система).</li>
+<li>Стоимость: ~USD 500–1 500/маркa/класс.</li>
+<li>Срок: 9–12 месяцев.</li>
+</ul>
+<h3 id="49-legal-setup">4.9. Рекомендация (Legal Setup)</h3>
+<p><strong>Фаза 1 (0–24 мес.): RO в Гуанчжоу</strong>
+- Scope: market research, sourcing support, quality inspection, liaison.
+- Timeline: 8–10 недель.
+- Budget: USD 5–7k setup + USD 250–320k/year OPEX.</p>
+<p><strong>Фаза 2 (24–36 мес.): WFOE (trading) — при подтверждении B2B-модели</strong>
+- Registered capital: RMB 500k–1M.
+- Scope: import/export, wholesale.</p>
+<hr />
+<h2 id="5">Блок 5 — Логистика и цепочки поставок</h2>
+<h3 id="51">5.1. Промышленные кластеры</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Регион</th>
+<th>Города</th>
+<th>Специализация</th>
+<th>Масштаб</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Гуандун</strong></td>
+<td>Гуанчжоу, Шэньчжэнь, Шаньтоу/Чэнхай</td>
+<td><strong>Игрушки (#1)</strong>, электроника, OEM</td>
+<td>50 000+ toy companies; 70% world plastic toys</td>
+</tr>
+<tr>
+<td><strong>Чжэцзян</strong></td>
+<td>Иу, Нинбо, Ханчжоу</td>
+<td>Мелкая галантерея, e-commerce</td>
+<td>Yiwu market — 75 000+ поставщиков</td>
+</tr>
+<tr>
+<td><strong>Цзянсу</strong></td>
+<td>Куньшань, Сучжоу</td>
+<td>Текстиль, коляски, strollers</td>
+<td>Goodbaby HQ (Куньшань)</td>
+</tr>
+<tr>
+<td><strong>Шаньдун</strong></td>
+<td>Циндао, Яньтай</td>
+<td>Детское питание, порт</td>
+<td>Formula, seafood</td>
+</tr>
+<tr>
+<td><strong>Фуцзянь</strong></td>
+<td>Цюаньчжоу, Фучжоу</td>
+<td>Детская обувь, одежда</td>
+<td>Footwear capital</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Чэнхай (Шаньтоу) — ключевой кластер для DM:</strong></p>
+<ul>
+<li>Export toys 2024: <strong>CNY 10,24 млрд</strong> (72% экспорта района).</li>
+<li>300 000+ новых моделей/год.</li>
+<li>90% компонентов — локально; <strong>7 дней</strong> от design до prototype.</li>
+<li>Export to <strong>140+ countries</strong>.</li>
+</ul>
+<h3 id="52">5.2. Логистические маршруты Китай → Россия</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Маршрут</th>
+<th>Origin → Destination</th>
+<th>Transit time</th>
+<th>Cost (indicative)</th>
+<th>Best for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Морской</strong></td>
+<td>Qingdao/Shanghai/Ningbo → SPb/Novorossiysk</td>
+<td>40–55 дней</td>
+<td>USD 2 000–4 000/FEU</td>
+<td>Bulk, non-urgent</td>
+</tr>
+<tr>
+<td><strong>Ж/д (Trans-Siberian)</strong></td>
+<td>Xi'an/Chengdu/Chongqing → Moscow/Elektrougli</td>
+<td>14–22 дня</td>
+<td><strong>USD 1 500–3 500/20GP</strong></td>
+<td>Mid-volume, balanced</td>
+</tr>
+<tr>
+<td><strong>Ж/д (via KZ)</strong></td>
+<td>Yiwu → Bely Rast/Moscow</td>
+<td>18–25 дней</td>
+<td>USD 2 000–4 000/FEU</td>
+<td>Южный Китай → РФ</td>
+</tr>
+<tr>
+<td><strong>Авиа</strong></td>
+<td>Guangzhou/Shanghai → Moscow</td>
+<td>3–7 дней</td>
+<td>USD 3–8/kg</td>
+<td>Samples, urgent</td>
+</tr>
+<tr>
+<td><strong>Авто</strong></td>
+<td>Manzhouli/Zabaykalsk</td>
+<td>7–14 дней</td>
+<td>Variable</td>
+<td>Cross-border, small lots</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Ж/д статистика 2024:</strong></p>
+<ul>
+<li>China-Russia routes: <strong>88,6%</strong> transit через KZ/RU/BY.</li>
+<li>Top routes: Xi'an–Elektrougli (11%), Chongqing–Elektrougli (9%), Chengdu–Kolyadichi (22%).</li>
+<li>Toys/sporting goods: <strong>+1 п.п.</strong> share в container mix 2024.</li>
+<li>Post-Red Sea (2024): rail demand <strong>+37%</strong>, prices up «several times» on key routes.</li>
+</ul>
+<h3 id="53-cost-per-kg-comparison-indicative">5.3. Cost-per-kg comparison (indicative)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>USD/kg (typical)</th>
+<th>20GP (~24 t)</th>
+<th>Use case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sea</td>
+<td>0,05–0,15</td>
+<td>USD 2 000–4 000</td>
+<td>Planned inventory</td>
+</tr>
+<tr>
+<td>Rail</td>
+<td>0,15–0,40</td>
+<td>USD 1 500–3 500</td>
+<td>Regular replenishment</td>
+</tr>
+<tr>
+<td>Air</td>
+<td>3,00–8,00</td>
+<td>n/a</td>
+<td>Samples, launch</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="54">5.4. Экономия от прямой работы с фабриками</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Статья</th>
+<th>Типичная маржа посредника</th>
+<th>Экономия RO</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Trading company/agent</td>
+<td>5–15%</td>
+<td>Direct factory access</td>
+</tr>
+<tr>
+<td>QC failures / returns</td>
+<td>3–8% of COGS</td>
+<td>On-site inspection</td>
+</tr>
+<tr>
+<td>Sample lead time</td>
+<td>2–4 weeks via agent</td>
+<td>3–7 days direct</td>
+</tr>
+<tr>
+<td>MOQ negotiation</td>
+<td>Standard</td>
+<td>Custom MOQ for DM volume</td>
+</tr>
+<tr>
+<td><strong>Совокупная целевая экономия</strong></td>
+<td>—</td>
+<td><strong>8–15%</strong> on addressable spend</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="55-operating-model">5.5. Функции офиса (Operating Model)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Функция</th>
+<th>Описание</th>
+<th>KPI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Sourcing</strong></td>
+<td>Поиск OEM/ODM, переговоры, контракты</td>
+<td>New suppliers/quarter</td>
+</tr>
+<tr>
+<td><strong>QC Inspection</strong></td>
+<td>Pre-shipment inspection (AQL 2.5)</td>
+<td>Defect rate &lt;1,5%</td>
+</tr>
+<tr>
+<td><strong>Sample management</strong></td>
+<td>Showroom, sample library</td>
+<td>Time-to-shelf</td>
+</tr>
+<tr>
+<td><strong>Supplier audit</strong></td>
+<td>Social compliance, capacity</td>
+<td>Audit score</td>
+</tr>
+<tr>
+<td><strong>Logistics coordination</strong></td>
+<td>Booking, documentation, customs</td>
+<td>On-time delivery</td>
+</tr>
+<tr>
+<td><strong>Trend scouting</strong></td>
+<td>Canton Fair, Yiwu market, 潮玩</td>
+<td>SKU pipeline</td>
+</tr>
+<tr>
+<td><strong>IP protection</strong></td>
+<td>TM registration, NDA enforcement</td>
+<td>Zero IP incidents</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="56-best-practices">5.6. Best practices (кейсы)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Компания</th>
+<th>Модель</th>
+<th>Урок для DM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>IKEA Trading (Иу/Гуанчжоу)</strong></td>
+<td>Regional sourcing offices + strict QC</td>
+<td>Long-term supplier relationships</td>
+</tr>
+<tr>
+<td><strong>Carrefour Global Sourcing</strong></td>
+<td>Hub in Shanghai + category teams</td>
+<td>Category-specialist buyers</td>
+</tr>
+<tr>
+<td><strong>X5 Import (杭州)</strong></td>
+<td>RO-equivalent + direct import team</td>
+<td><strong>Ближайший аналог:</strong> 1 500+ suppliers, 70+ countries</td>
+</tr>
+<tr>
+<td><strong>Ozon Global</strong></td>
+<td>China office for marketplace sellers</td>
+<td>Cross-border model</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>X5 Import — референс:</strong> 阿勒维埃（杭州）采购有限公司 (Hangzhou) — прямой закупочный офис для российского ритейла. Модель доказала эффективность для FMCG/non-food.</p>
+<hr />
+<h2 id="6">Блок 6 — Финансовая модель представительства</h2>
+<blockquote>
+<p><strong>Disclaimer:</strong> модель построена на публичных данных и отраслевых бенчмарках. Требует калибровки на internal procurement data.</p>
+</blockquote>
+<h3 id="61-capex-year-0">6.1. CAPEX (Year-0)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Статья</th>
+<th>Conservative</th>
+<th>Base</th>
+<th>Aggressive</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Юридическая регистрация RO</td>
+<td>USD 5 000</td>
+<td>USD 6 000</td>
+<td>USD 8 000</td>
+</tr>
+<tr>
+<td>TM registration (CNIPA, 3 marks)</td>
+<td>USD 3 000</td>
+<td>USD 5 000</td>
+<td>USD 8 000</td>
+</tr>
+<tr>
+<td>Office deposit (6 mo) + fit-out (100 m²)</td>
+<td>USD 15 000</td>
+<td>USD 25 000</td>
+<td>USD 40 000</td>
+</tr>
+<tr>
+<td>IT (laptops, VPN, ERP connector)</td>
+<td>USD 10 000</td>
+<td>USD 15 000</td>
+<td>USD 25 000</td>
+</tr>
+<tr>
+<td>Setup trips (3–4 visits)</td>
+<td>USD 15 000</td>
+<td>USD 20 000</td>
+<td>USD 30 000</td>
+</tr>
+<tr>
+<td>Contingency (10%)</td>
+<td>USD 5 000</td>
+<td>USD 7 000</td>
+<td>USD 11 000</td>
+</tr>
+<tr>
+<td><strong>Total CAPEX</strong></td>
+<td><strong>USD 53 000</strong></td>
+<td><strong>USD 78 000</strong></td>
+<td><strong>USD 122 000</strong></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="62-opex-annual">6.2. OPEX (Annual)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Статья</th>
+<th>Headcount</th>
+<th>Base (USD/год)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Head of Representative Office (expat, RU/CN)</td>
+<td>1</td>
+<td>90 000</td>
+</tr>
+<tr>
+<td>Sourcing Managers (Guangzhou/Shenzhen)</td>
+<td>2</td>
+<td>60 000</td>
+</tr>
+<tr>
+<td>QC Manager</td>
+<td>1</td>
+<td>30 000</td>
+</tr>
+<tr>
+<td>Admin / Assistant (local)</td>
+<td>1</td>
+<td>12 000</td>
+</tr>
+<tr>
+<td>Accountant (outsourced, Tricor/Mazars)</td>
+<td>—</td>
+<td>12 000</td>
+</tr>
+<tr>
+<td>Office rent (100 m², Guangzhou Grade A)</td>
+<td>—</td>
+<td>18 000</td>
+</tr>
+<tr>
+<td>Social insurance (local staff, ~35%)</td>
+<td>—</td>
+<td>15 000</td>
+</tr>
+<tr>
+<td>Travel &amp; QC inspections (50 trips)</td>
+<td>—</td>
+<td>35 000</td>
+</tr>
+<tr>
+<td>Legal / compliance retainer</td>
+<td>—</td>
+<td>12 000</td>
+</tr>
+<tr>
+<td>IT, comms, insurance</td>
+<td>—</td>
+<td>8 000</td>
+</tr>
+<tr>
+<td>Marketing research, translation</td>
+<td>—</td>
+<td>5 000</td>
+</tr>
+<tr>
+<td><strong>Total OPEX</strong></td>
+<td><strong>6 FTE</strong></td>
+<td><strong>USD 297 000</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Зарплатные бенчмарки (2024–2025):</strong></p>
+<ul>
+<li>Shanghai Sourcing Manager: RMB 18 500/мес (avg.)</li>
+<li>Guangzhou Sourcing Manager: RMB 15 300/мес (avg.)</li>
+<li>Tier 1 (Shanghai/Shenzhen): RMB 20 000–35 000/мес</li>
+<li>Tier 2 (Guangzhou): RMB 15 000–25 000/мес</li>
+</ul>
+<h3 id="63-indirect-parent">6.3. Доходная сторона (indirect, через parent)</h3>
+<p><strong>Assumptions (Base case):</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DM revenue (2024)</td>
+<td>RUB 224,8 млрд</td>
+</tr>
+<tr>
+<td>COGS (% of revenue)</td>
+<td>~65% = RUB 146 млрд</td>
+</tr>
+<tr>
+<td>China-sourcing share of COGS</td>
+<td>35% = <strong>RUB 51 млрд</strong></td>
+</tr>
+<tr>
+<td>Addressable via RO (Year 1)</td>
+<td>40% = RUB 20,4 млрд</td>
+</tr>
+<tr>
+<td>Addressable via RO (Year 3)</td>
+<td>70% = RUB 35,7 млрд</td>
+</tr>
+<tr>
+<td>Procurement savings</td>
+<td>8–12%</td>
+</tr>
+<tr>
+<td>Defect/return reduction</td>
+<td>20–30% of current defect cost (~1% COGS)</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Benefit</th>
+<th>Year 1</th>
+<th>Year 3</th>
+<th>Year 5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Procurement savings (10%)</td>
+<td>RUB 2,04 млрд</td>
+<td>RUB 3,57 млрд</td>
+<td>RUB 4,08 млрд</td>
+</tr>
+<tr>
+<td>Defect reduction (0,2% COGS)</td>
+<td>RUB 0,29 млрд</td>
+<td>RUB 0,50 млрд</td>
+<td>RUB 0,58 млрд</td>
+</tr>
+<tr>
+<td>Faster time-to-market (qualitative)</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>Total quantifiable benefit</strong></td>
+<td><strong>RUB 2,33 млрд</strong></td>
+<td><strong>RUB 4,07 млрд</strong></td>
+<td><strong>RUB 4,66 млрд</strong></td>
+</tr>
+<tr>
+<td>RO OPEX (RUB, @ 12 RUB/USD)</td>
+<td>RUB 24 млн</td>
+<td>RUB 28 млн</td>
+<td>RUB 32 млн</td>
+</tr>
+<tr>
+<td><strong>Net benefit</strong></td>
+<td><strong>RUB 2,31 млрд</strong></td>
+<td><strong>RUB 4,04 млрд</strong></td>
+<td><strong>RUB 4,63 млрд</strong></td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="64-5-year-pl-summary">6.4. Три сценария (5-year P&amp;L summary)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Conservative</th>
+<th>Base</th>
+<th>Aggressive</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Addressable spend Y1 (%)</td>
+<td>25%</td>
+<td>40%</td>
+<td>55%</td>
+</tr>
+<tr>
+<td>Savings rate</td>
+<td>6%</td>
+<td>10%</td>
+<td>14%</td>
+</tr>
+<tr>
+<td>Year 1 net benefit (RUB)</td>
+<td>0,77 млрд</td>
+<td>2,31 млрд</td>
+<td>4,45 млрд</td>
+</tr>
+<tr>
+<td>Year 5 net benefit (RUB)</td>
+<td>1,55 млрд</td>
+<td>4,63 млрд</td>
+<td>8,12 млрд</td>
+</tr>
+<tr>
+<td><strong>NPV (5Y, 15% discount)</strong></td>
+<td>RUB 3,2 млрд</td>
+<td><strong>RUB 9,8 млрд</strong></td>
+<td>RUB 18,5 млрд</td>
+</tr>
+<tr>
+<td><strong>IRR</strong></td>
+<td>85%</td>
+<td><strong>&gt;150%</strong></td>
+<td>&gt;200%</td>
+</tr>
+<tr>
+<td><strong>Payback</strong></td>
+<td>8–12 мес.</td>
+<td><strong>6–8 мес.</strong></td>
+<td>4–6 мес.</td>
+</tr>
+</tbody>
+</table></div>
+<p><em>NPV/IRR высокие из-за низкого CAPEX/OPEX vs. масштаба закупок — типично для sourcing office model.</em></p>
+<h3 id="65">6.5. Чувствительность</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Impact on Year 1 net benefit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RUB/CNY −10% (RUB depreciation)</td>
+<td>−5% (higher CNY costs, but savings in RUB terms neutral)</td>
+</tr>
+<tr>
+<td>Addressable spend −10 п.п.</td>
+<td>−25%</td>
+</tr>
+<tr>
+<td>Savings rate −2 п.п. (8% vs 10%)</td>
+<td>−20%</td>
+</tr>
+<tr>
+<td>OPEX +20%</td>
+<td>−1% (negligible vs. savings)</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="66">6.6. Валютные риски (хеджирование)</h3>
+<ul>
+<li><strong>Natural hedge:</strong> закупки в CNY → продажи в RUB (partial match via import COGS).</li>
+<li><strong>Forward contracts:</strong> 3–6 month CNY/RUB forwards через Bank of China.</li>
+<li><strong>Nominal CNY accounts:</strong> накопление CNY для оплаты поставщиков без conversion.</li>
+</ul>
+<hr />
+<h2 id="7">Блок 7 — Локация офиса</h2>
+<h3 id="71">7.1. Сравнительная матрица</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Критерий</th>
+<th>Шанхай</th>
+<th><strong>Гуанчжоу</strong></th>
+<th>Шэньчжэнь</th>
+<th>Иу</th>
+<th>Гонконг</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Близость к фабрикам</td>
+<td>★★★</td>
+<td>★★★★★</td>
+<td>★★★★★</td>
+<td>★★★★★ (галanterея)</td>
+<td>★★</td>
+</tr>
+<tr>
+<td>Близость к портам</td>
+<td>★★★★★</td>
+<td>★★★★ (Nansha)</td>
+<td>★★★★★ (Yantian)</td>
+<td>★★★ (Ningbo)</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td>Аренда Grade A (USD/m²/mo)</td>
+<td>~28,6</td>
+<td><strong>~16,5</strong></td>
+<td>~20–25</td>
+<td>~8–12</td>
+<td>~40–60</td>
+</tr>
+<tr>
+<td>Русскоязычные кадры</td>
+<td>★★★★★</td>
+<td>★★★★</td>
+<td>★★★</td>
+<td>★★★★★</td>
+<td>★★★</td>
+</tr>
+<tr>
+<td>Налоговые льготы</td>
+<td>HFTZ</td>
+<td><strong>Nansha FTZ</strong></td>
+<td>Qianhai FTZ</td>
+<td>Yiwu Pilot Zone</td>
+<td>Low tax</td>
+</tr>
+<tr>
+<td>Авиа → Москва</td>
+<td>Прямые</td>
+<td>Прямые</td>
+<td>Через HK/PEK</td>
+<td>Через HGH</td>
+<td>Прямые</td>
+</tr>
+<tr>
+<td>Деловая инфраструктура</td>
+<td>★★★★★</td>
+<td>★★★★</td>
+<td>★★★★</td>
+<td>★★★</td>
+<td>★★★★★</td>
+</tr>
+<tr>
+<td><strong>Итого (для sourcing RO)</strong></td>
+<td>22/35</td>
+<td><strong>28/35</strong></td>
+<td>27/35</td>
+<td>24/35</td>
+<td>18/35</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Аренда Grade A (2025, Cushman &amp; Wakefield):</strong></p>
+<ul>
+<li>Shanghai: RMB 201,4/m²/mo (−9,8% YoY); vacancy 23,4%.</li>
+<li>Guangzhou: RMB 116,3/m²/mo (−11,5% YoY); vacancy 20,7%.</li>
+<li><strong>Tenant market:</strong> переговорная позиция арендатора сильная (rent-free periods, fit-out subsidies).</li>
+</ul>
+<h3 id="72">7.2. Свободные экономические зоны</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Zone</th>
+<th>Локация</th>
+<th>Льготы для DM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Nansha FTZ (广州)</strong></td>
+<td>Guangzhou</td>
+<td>Import/export facilitation, tax incentives</td>
+</tr>
+<tr>
+<td><strong>Qianhai (深圳)</strong></td>
+<td>Shenzhen</td>
+<td>Cross-border finance, HK connectivity</td>
+</tr>
+<tr>
+<td><strong>Shanghai FTZ</strong></td>
+<td>Shanghai</td>
+<td>Best for HQ functions, not sourcing</td>
+</tr>
+<tr>
+<td><strong>Yiwu CBT Pilot Zone</strong></td>
+<td>Yiwu</td>
+<td>Cross-border e-commerce, small traders</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="73">7.3. Кейсы российских компаний</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Компания</th>
+<th>Локация в Китае</th>
+<th>Модель</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>X5 Import</strong></td>
+<td>Hangzhou (杭州)</td>
+<td>Procurement office для direct import</td>
+</tr>
+<tr>
+<td><strong>Магнит</strong></td>
+<td>n/a (no public office)</td>
+<td>Import via traders</td>
+</tr>
+<tr>
+<td><strong>Ozon Global</strong></td>
+<td>Shenzhen/Hangzhou</td>
+<td>Seller onboarding, logistics</td>
+</tr>
+<tr>
+<td><strong>Wildberries</strong></td>
+<td>Guangzhou</td>
+<td>Cross-border logistics hub</td>
+</tr>
+<tr>
+<td><strong>КАМАЗ</strong></td>
+<td>Beijing (rep office)</td>
+<td>Industrial liaison</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="74">7.4. Рекомендация</h3>
+<p><strong>Primary: Гуанчжоу (Tianhe or Pazhou)</strong> — HQ representative office
+- Причины: близость к Чэнхаю (2h), Nansha port, lowest Grade A rent, direct flights to Moscow, developing Russian business community.
+- Addressable cluster: toys, clothing, electronics — 80%+ DM China sourcing.</p>
+<p><strong>Secondary: Shenzhen Nanshan or Dongguan</strong> — QC/sourcing field office (shared workspace)
+- 1–2 sourcing/QC staff co-located with supplier base.
+- Day trips to Chenghai (Shantou) for toy factory visits.</p>
+<p><strong>Reserve: Shanghai</strong> — если потребуется HQ-level presence для переговоров с top-tier brands (Goodbaby, Pop Mart HQ).</p>
+<p><strong>Hybrid model:</strong></p>
+<pre><code>Гуанчжоу (RO HQ, 2–3 staff) ←→ Шэньчжэнь/Чэнхай (field, 2–3 staff)
+         ↓
+    Nansha Port / Rail → Moscow
+</code></pre>
+<hr />
+<h2 id="8">Блок 8 — Риски и митигация</h2>
+<h3 id="81-risk-map-probability-impact">8.1. Risk Map (Probability × Impact)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Риск</th>
+<th>P</th>
+<th>I</th>
+<th>Score</th>
+<th>Митигация</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>Геополитика / санкции</strong></td>
+<td>Medium</td>
+<td>High</td>
+<td>🔴</td>
+<td>CNY settlements; local banks (BOC, ICBC); HK holding option; no public B2C marketing</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Secondary sanctions для CN-контрагентов</strong></td>
+<td>Medium</td>
+<td>Medium</td>
+<td>🟡</td>
+<td>Due diligence; diversified supplier base; compliance screening</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>RUB/CNY volatility</strong></td>
+<td>High</td>
+<td>Medium</td>
+<td>🟡</td>
+<td>Natural hedge; 3–6M forwards; CNY nominal accounts</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>CBEC/regulatory changes</strong></td>
+<td>Low</td>
+<td>Medium</td>
+<td>🟢</td>
+<td>External compliance consultant; monitoring MOFCOM/SAMR</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>GB/CCC standard updates</strong></td>
+<td>Medium</td>
+<td>Medium</td>
+<td>🟡</td>
+<td>Pre-shipment testing; certified labs (SGS, Intertek CN)</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>Staff retention / relocation</strong></td>
+<td>Medium</td>
+<td>Medium</td>
+<td>🟡</td>
+<td>Competitive comp (Tier 1 salary in Tier 2 city); expat + local mix</td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>Cultural barrier (Guanxi/Mianzi)</strong></td>
+<td>Medium</td>
+<td>Low</td>
+<td>🟢</td>
+<td>Cross-cultural training; local hires for negotiations</td>
+</tr>
+<tr>
+<td>8</td>
+<td><strong>Russian brand perception (B2C)</strong></td>
+<td>Low</td>
+<td>Medium</td>
+<td>🟢</td>
+<td>B2B positioning only (Phase 1); no consumer marketing</td>
+</tr>
+<tr>
+<td>9</td>
+<td><strong>Great Firewall / IT</strong></td>
+<td>High</td>
+<td>Low</td>
+<td>🟢</td>
+<td>Corporate VPN (China-compliant); local hosting for office services</td>
+</tr>
+<tr>
+<td>10</td>
+<td><strong>IP theft / counterfeiting</strong></td>
+<td>Medium</td>
+<td>High</td>
+<td>🔴</td>
+<td>CNIPA registration BEFORE sourcing; NDA; factory audits</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="82-rubcny">8.2. RUB/CNY — исторический коридор</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Period</th>
+<th>RUB/CNY (avg.)</th>
+<th>CNY/RUB</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2022 (post-sanctions)</td>
+<td>~0,055–0,075</td>
+<td>13–18</td>
+</tr>
+<tr>
+<td>2023</td>
+<td>~0,075–0,085</td>
+<td>12–13</td>
+</tr>
+<tr>
+<td>2024</td>
+<td>~0,085–0,095</td>
+<td>10,5–12</td>
+</tr>
+<tr>
+<td>2025</td>
+<td>~0,078–0,091</td>
+<td>11–13</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Trend:</strong> RUB stabilized vs CNY post-2022 shock; CNY increasingly used in bilateral trade (de-dollarization).</p>
+<h3 id="83-top-5">8.3. Top-5 рисков с планом митигации</h3>
+<ol>
+<li><strong>Геополитика:</strong> расчёты в CNY через Bank of China; избегать USD-correspondent chains; legal structure review quarterly.</li>
+<li><strong>IP protection:</strong> register all TM in CNIPA before first factory visit; engage local IP law firm (King &amp; Wood Mallesons).</li>
+<li><strong>Supplier quality:</strong> mandatory pre-shipment QC (AQL 2.5); approved vendor list; quarterly audits.</li>
+<li><strong>Currency:</strong> 50% CNY prepayment hedge via forwards; maintain 3-month OPEX reserve in CNY.</li>
+<li><strong>Regulatory compliance:</strong> retainer with Dezan Shira / local law firm; subscribe to China Briefing regulatory updates.</li>
+</ol>
+<hr />
+<h2 id="9">Блок 9 — Библиография и источники</h2>
+<h3 id="_3">Корпоративные (Детский Мир)</h3>
+<ul>
+<li>Годовой отчёт ПАО «Детский мир» 2021–2022 (ir.detmir.ru)</li>
+<li>Пресс-релизы ГК «Детский мир» 2023–2024 (corp.detmir.ru)</li>
+<li>Коммерсантъ: «Группа компаний Детский мир» (2025)</li>
+<li>Interfax: ликвидация ПАО, структура акционеров (2024)</li>
+<li>СПАРК-Интерфакс: финансовые данные ООО «ДМ» (2024)</li>
+</ul>
+<h3 id="_4">Рынок Китая</h3>
+<ul>
+<li>《2025年中国玩具和婴童用品行业发展白皮书》— China Toy &amp; Juvenile Products Association</li>
+<li>Euromonitor / Mordor Intelligence / Grand View Research — China market sizing</li>
+<li>Moojing Global: China Maternity &amp; Baby Market 2025</li>
+<li>Mintel: China Baby and Children's Products Report 2025</li>
+<li>NBS China (国家统计局): demographic statistics 2024–2025</li>
+<li>Xinhua: birth rate data January 2025</li>
+</ul>
+<h3 id="_5">Конкуренты</h3>
+<ul>
+<li>Kidswant (301078.SZ): Annual Report 2024, 2025</li>
+<li>Goodbaby International (1086.HK): Annual Report 2024</li>
+<li>Pop Mart (9992.HK): Annual Report 2024</li>
+</ul>
+<h3 id="_6">Регуляторика</h3>
+<ul>
+<li>MOFCOM: Foreign Investment Guide 2025</li>
+<li>China Briefing / MSA Advisory: RO vs WFOE guides 2025–2026</li>
+<li>CNCA-C22-02:2020: CCC Toys Implementation Rules</li>
+<li>TMO Group: China CBEC Positive List</li>
+<li>PwC Tax Summaries: China withholding taxes</li>
+</ul>
+<h3 id="_7">Логистика</h3>
+<ul>
+<li>Index1520 / OTLE: Rail Container Transportation Eurasia 2024</li>
+<li>CNBC: China-Russia rail freight demand 2024</li>
+<li>GDToday / NewsGD: Chenghai toy industry data</li>
+</ul>
+<h3 id="hr">Недвижимость и HR</h3>
+<ul>
+<li>Cushman &amp; Wakefield: China Top Office Supply/Demand Report 2026</li>
+<li>Tanzhi.cn / Liepin: Sourcing Manager salary data</li>
+<li>JSC Groups: China salary benchmarks 2025</li>
+</ul>
+<h3 id="_8">Кейсы</h3>
+<ul>
+<li>X5 Import: x5.ru/en/partners/x5-import/</li>
+<li>CCPIT Jiangsu: X5 Hangzhou procurement office</li>
+</ul>
+<hr />
+<h2 id="10">Блок 10 — Дорожная карта (рекомендуемая)</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Этап</th>
+<th>Срок</th>
+<th>Deliverable</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Kick-off, утверждение scope</td>
+<td>3 дня</td>
+<td>Approved scope</td>
+<td>⬜</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Валидация internal data (Блок 1, 6)</td>
+<td>1 неделя</td>
+<td>Calibrated financial model</td>
+<td>⬜</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Desk research (Блоки 2–3)</td>
+<td>2 недели</td>
+<td><strong>✅ Данный отчёт</strong></td>
+<td>✅</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Legal memo (Блок 4)</td>
+<td>1,5 недели</td>
+<td>RO registration plan</td>
+<td>⬜</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Supplier mapping (Блок 5)</td>
+<td>1,5 недели</td>
+<td>Top-50 supplier longlist</td>
+<td>⬜</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Financial model final (Блок 6)</td>
+<td>2 недели</td>
+<td>Excel model + sensitivity</td>
+<td>⬜</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Location + risk (Блоки 7–8)</td>
+<td>1 неделя</td>
+<td><strong>✅ Рекомендации в отчёте</strong></td>
+<td>✅</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Final deck</td>
+<td>1 неделя</td>
+<td>Board presentation</td>
+<td>⬜</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Review &amp; approval</td>
+<td>1 неделя</td>
+<td>Go/No-Go decision</td>
+<td>⬜</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="post-approval">Фазы запуска (post-approval)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Фаза</th>
+<th>Срок</th>
+<th>Milestone</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Phase 0: Preparation</strong></td>
+<td>М1–М2</td>
+<td>Legal entity selection; TM filing CNIPA; office search Guangzhou</td>
+</tr>
+<tr>
+<td><strong>Phase 1: RO Setup</strong></td>
+<td>М2–М4</td>
+<td>RO registration; bank account; hire Head of Rep. Office</td>
+</tr>
+<tr>
+<td><strong>Phase 2: Operations Launch</strong></td>
+<td>М4–М6</td>
+<td>Team complete (6 FTE); first 10 supplier audits; QC protocol</td>
+</tr>
+<tr>
+<td><strong>Phase 3: Scale</strong></td>
+<td>М6–М12</td>
+<td>50+ active suppliers; 10% procurement savings validated</td>
+</tr>
+<tr>
+<td><strong>Phase 4: Evaluate WFOE</strong></td>
+<td>М12–М24</td>
+<td>B2B pilot; WFOE feasibility study</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2 id="_9">Приложение А — Ключевые рекомендации для презентации</h2>
+<ol>
+<li><strong>Go:</strong> открыть RO в Гуанчжоу — экономически обосновано (payback &lt;12 мес. в base case).</li>
+<li><strong>Scope:</strong> sourcing + QC + trend scouting; <strong>не B2C</strong> на первом этапе.</li>
+<li><strong>Budget Ask:</strong> USD 80k CAPEX + USD 300k/год OPEX = <strong>~RUB 30 млн/год</strong> total cost.</li>
+<li><strong>Expected Return:</strong> RUB 2+ млрд/год экономии на закупках (base case).</li>
+<li><strong>Team:</strong> 6 FTE (1 expat head + 3 local sourcing/QC + 1 admin + 1 outsourced accountant).</li>
+<li><strong>Next Step:</strong> валидация internal procurement data → legal memo → Board approval.</li>
+</ol>
+<h2 id="_10">Приложение Б — Открытые вопросы для внутренней валидации</h2>
+<ul>
+<li class="task"><span class="box"></span>Точная доля закупок из Китая (% of COGS by category)</li>
+<li class="task"><span class="box"></span>Текущий список trading agents и их маржа</li>
+<li class="task"><span class="box"></span>Defect/return rate по China-sourced SKU</li>
+<li class="task"><span class="box"></span>Существующие контракты с NDA/non-compete для agents</li>
+<li class="task"><span class="box"></span>Готовность Finance к CNY-denominated payments</li>
+<li class="task"><span class="box"></span>Sanction compliance review (legal)</li>
+<li class="task"><span class="box"></span>TM portfolio для регистрации в CNIPA</li>
+</ul>
+<hr />
+<blockquote>
+<p><strong>Версия:</strong> 1.0<br />
+<strong>Автор:</strong> Desk Research (AI-assisted)<br />
+<strong>Дата:</strong> 26.05.2026<br />
+<strong>Следующий шаг:</strong> валидация с Finance/Procurement + external legal counsel</p>
+</blockquote>
+    </main>
+    <footer class="footer">
+      Сгенерировано из <code>detsky_mir_china_research_report.md</code> · 01.06.2026
+    </footer>
+  </div>
+</div>
+<script type="module">
+  import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+  mermaid.initialize({
+    startOnLoad: true,
+    securityLevel: "loose",
+    theme: "default",
+  });
+</script>
+</body>
+</html>

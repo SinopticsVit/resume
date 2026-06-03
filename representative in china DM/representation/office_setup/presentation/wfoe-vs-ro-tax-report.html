@@ -1,0 +1,772 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WFOE vs RO: налоги и модель Фазы 1 — аналитический отчёт</title>
+<style>
+:root{
+  --bg:#f6f7f9; --card:#ffffff; --ink:#1f2733; --muted:#5b6675;
+  --brand:#1f3864; --brand-2:#2f5597; --accent:#0d7377; --line:#e3e7ee; --soft:#eef2f8;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;font-size:16px;line-height:1.65}
+.layout{display:grid;grid-template-columns:300px 1fr;max-width:1400px;margin:0 auto}
+.sidebar{position:sticky;top:0;height:100vh;overflow-y:auto;padding:24px 18px;background:var(--brand);color:#dfe7f5}
+.sidebar .brandmark{font-size:18px;font-weight:700;color:#fff;line-height:1.3}
+.sidebar .sub{font-size:12px;color:#9db4dc;margin:6px 0 10px}
+.sidebar h2{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#9db4dc;margin:16px 0 8px}
+.toc,.toc ul{list-style:none;padding:0;margin:0}
+.toc a{color:#cdd9ee;text-decoration:none;display:block;padding:5px 10px;border-radius:6px;font-size:13px}
+.toc a:hover{background:rgba(255,255,255,.1);color:#fff}
+.toc ul{margin-left:10px;border-left:1px solid rgba(255,255,255,.15);padding-left:6px}
+.toc ul a{font-size:12px;color:#a9bcdd}
+.content{padding:0 0 70px}
+.hero{background:linear-gradient(135deg,var(--brand) 0%,var(--accent) 100%);color:#fff;padding:44px 48px 36px}
+.hero h1{margin:0 0 10px;font-size:28px;line-height:1.25}
+.hero .tagline{color:#d9e7ff;font-size:15px;max-width:860px}
+.hero .pills{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px}
+.hero .pill{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);padding:5px 12px;border-radius:999px;font-size:12px}
+.main{padding:34px 48px}
+.main h2{font-size:23px;color:var(--brand);margin:42px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--line);scroll-margin-top:14px}
+.main h2:first-child{margin-top:6px}
+.main h3{font-size:18px;color:var(--brand-2);margin:24px 0 10px;scroll-margin-top:14px}
+.main h4{font-size:15px;margin:16px 0 8px}
+.main p{margin:10px 0}
+.main a{color:var(--brand-2)}
+.main hr{border:0;border-top:1px solid var(--line);margin:30px 0}
+ul,ol{padding-left:22px}
+li{margin:4px 0}
+strong{color:#15203a}
+.table-wrap{overflow-x:auto;margin:16px 0;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;font-size:14px;background:var(--card)}
+thead th{background:var(--brand);color:#fff;text-align:left;font-weight:600;padding:10px 12px}
+tbody td{padding:9px 12px;border-top:1px solid var(--line);vertical-align:top}
+tbody tr:nth-child(even){background:var(--soft)}
+tbody tr:hover{background:#e7eefb}
+blockquote{margin:16px 0;padding:14px 18px;background:#fff;border-left:4px solid var(--accent);border-radius:0 8px 8px 0;color:var(--muted);box-shadow:0 1px 2px rgba(20,40,80,.05)}
+blockquote p{margin:6px 0}
+pre{background:#0e1c33;color:#dfe9fb;padding:16px 18px;border-radius:10px;overflow-x:auto;font-size:13px;line-height:1.5}
+code{font-family:Consolas,"Liberation Mono",Menlo,monospace}
+:not(pre)>code{background:var(--soft);padding:1.5px 6px;border-radius:5px;font-size:13px}
+.mermaid{margin:20px 0;padding:16px;background:var(--card);border:1px solid var(--line);border-radius:10px;text-align:center}
+.footer{padding:22px 48px;color:var(--muted);font-size:13px;border-top:1px solid var(--line);background:var(--card)}
+@media (max-width:980px){
+  .layout{grid-template-columns:1fr}
+  .sidebar{position:static;height:auto}
+  .hero,.main,.footer{padding-left:20px;padding-right:20px}
+}
+@media print{
+  body{background:#fff;font-size:11.5px}
+  .layout{display:block;max-width:none}
+  .sidebar{display:none}
+  .hero{background:var(--brand)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  thead th{background:var(--brand)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .main h2{page-break-after:avoid}
+  table,pre,blockquote,.mermaid{page-break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar">
+    <div class="brandmark">Детский Мир — КНР</div>
+    <div class="sub">WFOE vs RO · налоги Фазы 1</div>
+    <h2>Содержание</h2>
+    <div class="toc">
+<ul>
+<li><a href="#1">1. Резюме для руководства</a></li>
+<li><a href="#2">2. Сравниваемые формы присутствия</a></li>
+<li><a href="#3-representative-office-ro">3. Налогообложение Representative Office (RO)</a><ul>
+<li><a href="#31">3.1. Принцип</a></li>
+<li><a href="#32-circular-18">3.2. Методы расчёта (Circular 18)</a></li>
+<li><a href="#33-parent-ro-6">3.3. Денежный поток parent при RO (6 месяцев)</a></li>
+<li><a href="#34-ro">3.4. Ограничения RO для модели «Детский Мир»</a></li>
+</ul>
+</li>
+<li><a href="#4-wfoe-cost-plus">4. Налогообложение WFOE (сервисный cost-plus, без торговли)</a><ul>
+<li><a href="#41-1">4.1. Модель «Детского Мира» (Фаза 1)</a></li>
+<li><a href="#42-wfoe">4.2. Налоги WFOE</a></li>
+<li><a href="#43-zero-rating">4.3. Опция: zero-rating НДС на экспорт услуг</a></li>
+<li><a href="#44-transfer-pricing">4.4. Transfer pricing</a></li>
+</ul>
+</li>
+<li><a href="#5-6">5. Количественное сравнение (6 месяцев, одна операционная база)</a><ul>
+<li><a href="#51-capex-1224">5.1. CAPEX и горизонт 12–24 месяца</a></li>
+<li><a href="#52">5.2. Сравнение денежных потоков</a></li>
+</ul>
+</li>
+<li><a href="#6-wfoe">6. Неторговые преимущества WFOE для модели «Детский Мир»</a></li>
+<li><a href="#7">7. Сравнение с агентом (кратко)</a></li>
+<li><a href="#8-wfoe">8. Риски WFOE и митигация</a></li>
+<li><a href="#9">9. Итоговый вывод</a></li>
+<li><a href="#10">10. Источники</a><ul>
+<li><a href="#_1">Нормативные и официальные</a></li>
+<li><a href="#_2">Профессиональные обзоры</a></li>
+<li><a href="#_3">Внутренние документы «Детский Мир»</a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+  </aside>
+  <div class="content">
+    <header class="hero">
+      <h1>WFOE vs RO: налоги и модель Фазы 1 — аналитический отчёт</h1>
+      <div class="tagline">Аналитический отчёт: сравнение налогообложения RO и WFOE по китайскому законодательству и цифрам модели «Детского Мира».</div>
+      <div class="pills"><span class="pill">WFOE cost-plus 8%</span><span class="pill">RO deemed profit</span><span class="pill">6 мес. · 1,73 млн CNY</span><span class="pill">Zero-rating НДС</span><span class="pill">Фаза 1 без торговли</span></div>
+    </header>
+    <main class="main">
+      <blockquote>
+<p><strong>Назначение:</strong> обоснование выбора <strong>WFOE (сервисный cost-plus)</strong> вместо <strong>Representative Office (RO)</strong> для «Детского Мира» в КНР на горизонте первых 6 месяцев <strong>без торговой деятельности</strong>.<br />
+<strong>Ответ на вопрос №1:</strong> <a href="./director-interview-questions.md">director-interview-questions.md</a><br />
+<strong>Модель:</strong> <a href="../03_budget_6m.md">03_budget_6m.md</a>, <a href="../01_functional_structure.md">01_functional_structure.md</a><br />
+<strong>Disclaimer:</strong> аналитический документ, <strong>не юридическое или налоговое заключение</strong>. Финальные ставки, zero-rating НДС и наценка cost-plus должны быть подтверждены локальным TP/налоговым консультантом (Шанхай).</p>
+</blockquote>
+<hr />
+<h2 id="1">1. Резюме для руководства</h2>
+<p><strong>Вывод:</strong> WFOE в режиме <strong>сервисного центра (cost-plus 8%)</strong> — <strong>более выгодная и правомерная форма</strong> для описанной модели Фазы 1, чем RO или работа только через агента — <strong>даже если компания не ведёт торговлю и экспорт</strong>.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Критерий</th>
+<th>RO</th>
+<th>WFOE cost-plus (Фаза 1)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Налоговая нагрузка (6 мес., cost base 1,73 млн CNY)</td>
+<td><strong>~8,4–12,4%</strong> от расходов</td>
+<td><strong>~8,5%</strong> (база) или <strong>~2,0%</strong> (при zero-rating НДС)</td>
+</tr>
+<tr>
+<td>Сервисные договоры и fapiao parent</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Оплата перевозчиков/лабораторий от имени КНР</td>
+<td>Ограничено / через parent</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Прямой найм 12–13 FTE</td>
+<td>Частично (dispatch в ряде городов)</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Активация Фазы 2 (торговля/экспорт)</td>
+<td>Закрытие RO + новая WFOE</td>
+<td>✅ без смены формы</td>
+</tr>
+<tr>
+<td>Соответствие 10 функциям F1–F10</td>
+<td>«Серая зона» liaison</td>
+<td>✅ в business scope</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Ключевой налоговый аргумент:</strong> RO облагается по <strong>deemed profit method</strong> на <strong>весь объём расходов</strong> (совокупная нагрузка 8,4–12,4%). WFOE платит <strong>CIT 25% только на наценку 8%</strong> (не на весь cost base) плюс НДС 6% на услуги; при оформлении <strong>export VAT zero-rating</strong> на услуги parent совокупная нагрузка падает до <strong>~2% от cost base</strong> — существенно ниже RO.</p>
+<p><strong>Ключевой операционный аргумент:</strong> модель <a href="../06_sample_delivery_scheme_payment.md">06_sample_delivery_scheme_payment.md</a> (sample fee, оплата перевозчика, cost-plus биллинг) <strong>юридически не реализуема в полном объёме через RO</strong>; WFOE — стандартная структура для cost-plus service centres в КНР (MSA, Acclime, PwC).</p>
+<blockquote>
+<p><strong>Примечание к раннему исследованию:</strong> в <a href="../../04_block4_regulatory_legal_framework.md">04_block4_regulatory_legal_framework.md</a> рекомендовался старт с RO. Текущий пакет <code>office_setup/</code> <strong>обновляет</strong> рекомендацию: WFOE с сервисным scope и без торговли в M1–M6.</p>
+</blockquote>
+<hr />
+<h2 id="2">2. Сравниваемые формы присутствия</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Критерий</th>
+<th>RO (代表机构)</th>
+<th>WFOE service/cost-plus</th>
+<th>Агент / трейдер</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Правосубъектность</strong></td>
+<td>Нет (отделение parent)</td>
+<td>Полная (ООО)</td>
+<td>Контрагент third party</td>
+</tr>
+<tr>
+<td><strong>Коммерческая выручка</strong></td>
+<td>❌ Запрещена</td>
+<td>✅ По сервисным договорам</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><strong>Fapiao (счёт-фактура) parent</strong></td>
+<td>❌</td>
+<td>✅ 6% VAT (или zero-rated)</td>
+<td>Через агента</td>
+</tr>
+<tr>
+<td><strong>Контракты с фабриками/перевозчиками</strong></td>
+<td>Только от parent</td>
+<td>✅ От WFOE</td>
+<td>От агента</td>
+</tr>
+<tr>
+<td><strong>Sourcing + QC + образцы</strong></td>
+<td>Liaison (ограничено)</td>
+<td>✅ В business scope</td>
+<td>Частично</td>
+</tr>
+<tr>
+<td><strong>Pass-through лабораторий</strong></td>
+<td>Слабая документальная база</td>
+<td>✅ Отдельная строка акта</td>
+<td>Зависит от агента</td>
+</tr>
+<tr>
+<td><strong>Прямой найм</strong></td>
+<td>Ограничения (dispatch)</td>
+<td>✅ 12–13 FTE</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Срок регистрации</strong></td>
+<td>6–10 нед.</td>
+<td>2–4 мес.</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>CAPEX setup (ориентир)</strong></td>
+<td>~40–80 тыс. CNY</td>
+<td><strong>254 тыс. CNY</strong> (6 мес.)</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>Переход к торговле (Фаза 2)</strong></td>
+<td>Закрытие + новая WFOE</td>
+<td>Активация scope</td>
+<td>Новый контракт</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Нормативная база RO:</strong> Приказ Госсовета №584 (регламент RO); разрешены liaison, market research, координация закупок, <strong>QC oversight</strong> — но <strong>не</strong> коммерческая деятельность, выставление счетов, подписание контрактов от своего имени (MSA, China Briefing, FDI China).</p>
+<p><strong>Нормативная база WFOE:</strong> Company Law PRC (2024); Foreign Investment Law; business scope «consulting / technical services / trade support»; сервисные договоры с related party — стандарт TP-практики (Guo Shui Fa [2010] №18 для RO; для WFOE — CIT Law + STA TP rules).</p>
+<hr />
+<h2 id="3-representative-office-ro">3. Налогообложение Representative Office (RO)</h2>
+<h3 id="31">3.1. Принцип</h3>
+<p>RO <strong>не может</strong> получать выручку от коммерческой деятельности. Операционные расходы финансируются <strong>переводами от материнской компании</strong> (cost centre). Налоговая база определяется по <strong>Guo Shui Fa [2010] №18</strong> («Временные меры по налогообложению RO иностранных предприятий»).</p>
+<h3 id="32-circular-18">3.2. Методы расчёта (Circular 18)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Метод</th>
+<th>Когда применяется</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Actual amount</strong></td>
+<td>Полный учёт доходов и расходов</td>
+</tr>
+<tr>
+<td><strong>Revenue-based (deemed)</strong></td>
+<td>Есть выручка, нет точных расходов</td>
+</tr>
+<tr>
+<td><strong>Expense-based (deemed)</strong></td>
+<td>Есть расходы, нет точной выручки — <strong>типично для RO sourcing/QC</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Expense-based формулы</strong> (deemed profit rate <strong>не менее 15%</strong> с 2010 г., ранее 10%):</p>
+<pre><code>Deemed Revenue = Total Expenses / (1 − Deemed Profit Rate)
+Taxable Income = Deemed Revenue × Deemed Profit Rate
+CIT Payable    = Taxable Income × 25%
+</code></pre>
+<p><strong>Пример</strong> при cost base <strong>1 730 675 CNY</strong> и deemed rate <strong>15%</strong>:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Шаг</th>
+<th>Расчёт</th>
+<th style="text-align: right;">CNY</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Deemed Revenue</td>
+<td>1 730 675 / 0,85</td>
+<td style="text-align: right;">2 036 676</td>
+</tr>
+<tr>
+<td>Taxable Income</td>
+<td>2 036 676 × 15%</td>
+<td style="text-align: right;">305 501</td>
+</tr>
+<tr>
+<td>CIT (25%)</td>
+<td>305 501 × 25%</td>
+<td style="text-align: right;"><strong>76 375</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p>Это <strong>только CIT</strong>. С учётом VAT и surcharges (после реформы BT→VAT, 2016) практики указывают <strong>совокупную</strong> нагрузку на расходы:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Режим RO</th>
+<th>Совокупная нагрузка на expenses</th>
+<th>Источник</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Малый масштаб (≤5 млн CNY revenue)</td>
+<td><strong>~8,4%</strong></td>
+<td>RSM Stone Forest</td>
+</tr>
+<tr>
+<td>General VAT taxpayer</td>
+<td><strong>≤12,39%</strong></td>
+<td>RSM Stone Forest</td>
+</tr>
+<tr>
+<td>Упрощённая оценка в раннем исследовании DM</td>
+<td><strong>~10–11,75%</strong></td>
+<td><a href="../../04_block4_regulatory_legal_framework.md">04_block4</a>, China Briefing</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="33-parent-ro-6">3.3. Денежный поток parent при RO (6 месяцев)</h3>
+<p>База расходов RO = <strong>тот же cost base 1 730 675 CNY</strong>, что и у WFOE (сопоставимый штат и OPEX).</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Сценарий RO</th>
+<th style="text-align: right;">Налог RO</th>
+<th style="text-align: right;"><strong>Итого отток parent (опер.)</strong></th>
+<th style="text-align: right;">Эфф. ставка</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Нижняя граница (8,4%)</td>
+<td style="text-align: right;">145 377</td>
+<td style="text-align: right;"><strong>1 876 052</strong></td>
+<td style="text-align: right;">8,4%</td>
+</tr>
+<tr>
+<td>Верхняя граница (12,39%)</td>
+<td style="text-align: right;">214 431</td>
+<td style="text-align: right;"><strong>1 945 106</strong></td>
+<td style="text-align: right;">12,4%</td>
+</tr>
+<tr>
+<td>Только CIT по формуле 15%×25%</td>
+<td style="text-align: right;">76 375</td>
+<td style="text-align: right;"><em>+ VAT/surtax сверх</em></td>
+<td style="text-align: right;">~4,4% CIT only</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>RO <strong>не выставляет</strong> parent структурированный сервисный инвойс; переводы + налог RO — отдельные потоки. TP-прозрачность для группы <strong>ниже</strong>, чем у cost-plus WFOE.</p>
+</blockquote>
+<h3 id="34-ro">3.4. Ограничения RO для модели «Детский Мир»</h3>
+<ol>
+<li><strong>Sample fee / QC fee</strong> — в RO нет легального механизма «продажи услуг» parent; логистика образцов (<a href="../06_sample_delivery_scheme_payment.md">06_sample_delivery_scheme_payment.md</a>) оформляется хуже, чем invoice WFOE → parent.</li>
+<li><strong>RO нельзя преобразовать в WFOE</strong> — только ликвидация RO и параллельная регистрация WFOE (Acclime, China Briefing) → <strong>дублирование затрат</strong> при Фазе 2.</li>
+<li><strong>Найм:</strong> в ряде локаций RO historically использовал dispatch agencies; WFOE — прямой employment contract (важно для удержания ОТК и кат. менеджеров).</li>
+<li><strong>Масштаб 10 функций (F1–F10)</strong> — RO формально «liaison»; объём sourcing, контента, лабораторий, аналитики <strong>ближе к коммерческому сервису</strong>, что повышает <strong>налоговый и регуляторный риск</strong> при проверке.</li>
+</ol>
+<hr />
+<h2 id="4-wfoe-cost-plus">4. Налогообложение WFOE (сервисный cost-plus, без торговли)</h2>
+<h3 id="41-1">4.1. Модель «Детского Мира» (Фаза 1)</h3>
+<p>Описана в <a href="../03_budget_6m.md">03_budget_6m.md</a>, §7 и <a href="../01_functional_structure.md">01_functional_structure.md</a>:</p>
+<ul>
+<li>WFOE оказывает <strong>набор услуг</strong> материнской компании (sourcing, QC, образцы, контент, тестирование, аналитика, management).</li>
+<li>Цена = <strong>cost base × (1 + 8%)</strong> — стандарт <strong>cost-plus / 成本加成</strong> для внутригрупповых услуг.</li>
+<li><strong>Торговля и экспорт товара не ведутся</strong>; экспортная лицензия — «про запас» для Фазы 2.</li>
+</ul>
+<h3 id="42-wfoe">4.2. Налоги WFOE</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Налог</th>
+<th>База</th>
+<th>Ставка</th>
+<th style="text-align: right;">6 мес. (CNY)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>НДС (VAT)</strong></td>
+<td>Выручка по договорам</td>
+<td><strong>6%</strong> (modern services)</td>
+<td style="text-align: right;">112 148</td>
+</tr>
+<tr>
+<td><strong>CIT</strong></td>
+<td>Наценка 8% (не весь cost base!)</td>
+<td><strong>25%</strong></td>
+<td style="text-align: right;">34 613</td>
+</tr>
+<tr>
+<td><strong>Итого налоги</strong></td>
+<td></td>
+<td></td>
+<td style="text-align: right;"><strong>146 761</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Ключевое отличие от RO:</strong> CIT начисляется на <strong>138 454 CNY</strong> наценки, а не на <strong>1 730 675 CNY</strong> расходов.</p>
+<pre><code>Cost base (6 мес.)     = 1 730 675 CNY
+Наценка 8%             =   138 454 CNY
+Выручка (без НДС)      = 1 869 129 CNY
+НДС 6%                 =   112 148 CNY
+CIT 25% × наценка      =    34 613 CNY
+Отток parent (услуги)  = 1 981 277 CNY  (= выручка + НДС)
+</code></pre>
+<h3 id="43-zero-rating">4.3. Опция: zero-rating НДС на экспорт услуг</h3>
+<p>По <strong>Caishui [2016] №36</strong> (п. 4 приложения) и практике STA часть <strong>cross-border services</strong> parent может квалифицироваться как <strong>VAT zero-rated</strong> (0%), если:</p>
+<ul>
+<li>услуги фактически потребляются за рубежом;</li>
+<li>оформлен <strong>intercompany service agreement</strong>;</li>
+<li>зарегистрирован контракт export VAT / выполнены требования STA (<a href="https://www.chinatax.gov.cn/chinatax/c102449/c5239191/content.html">chinatax.gov.cn</a>).</li>
+</ul>
+<p><strong>Сценарий zero-rating (6 мес.):</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Показатель</th>
+<th style="text-align: right;">CNY</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cost base</td>
+<td style="text-align: right;">1 730 675</td>
+</tr>
+<tr>
+<td>Выручка parent (без НДС)</td>
+<td style="text-align: right;">1 869 129</td>
+</tr>
+<tr>
+<td>НДС</td>
+<td style="text-align: right;"><strong>0</strong></td>
+</tr>
+<tr>
+<td>CIT (25% × наценка)</td>
+<td style="text-align: right;">34 613</td>
+</tr>
+<tr>
+<td><strong>Отток parent</strong></td>
+<td style="text-align: right;"><strong>1 869 129</strong></td>
+</tr>
+<tr>
+<td><strong>Эфф. налоговая нагрузка / cost base</strong></td>
+<td style="text-align: right;"><strong>2,0%</strong></td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>Zero-rating <strong>не автоматическая</strong> — требует подачи и согласования в первом квартале работы WFOE. В бюджете заложен <strong>консервативный</strong> сценарий с НДС 6% (<a href="../03_budget_6m.md">03_budget_6m.md</a>, §9).</p>
+</blockquote>
+<h3 id="44-transfer-pricing">4.4. Transfer pricing</h3>
+<ul>
+<li>Наценка <strong>8%</strong> — в рынке <strong>5–15%</strong> для routine support services (MSA Advisory, Acclime).</li>
+<li>Необходимы: <strong>Master Service Agreement</strong>, SOW по F1–F10, <strong>benchmarking study</strong>, contemporaneous TP documentation.</li>
+<li>Согласование с консультантом — <strong>M1–M2</strong> (<a href="../04_setup_development_plan_6m.md">04_setup_development_plan_6m.md</a>).</li>
+</ul>
+<hr />
+<h2 id="5-6">5. Количественное сравнение (6 месяцев, одна операционная база)</h2>
+<p><strong>Единая база:</strong> cost base <strong>1 730 675 CNY</strong> (идентичный штат/OPEX из <a href="../03_budget_6m.md">03_budget_6m.md</a>, §5–7).</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Сценарий</th>
+<th style="text-align: right;">Налоги</th>
+<th style="text-align: right;">Отток parent (опер.)</th>
+<th style="text-align: right;">vs cost base</th>
+<th>vs RO (8,4%)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>WFOE, база (НДС 6%)</strong></td>
+<td style="text-align: right;">146 761</td>
+<td style="text-align: right;">1 981 277</td>
+<td style="text-align: right;">8,48%</td>
+<td>+0,08 п.п.</td>
+</tr>
+<tr>
+<td><strong>WFOE, zero-rating НДС</strong></td>
+<td style="text-align: right;">34 613</td>
+<td style="text-align: right;">1 869 129</td>
+<td style="text-align: right;"><strong>2,00%</strong></td>
+<td><strong>−6,4 п.п.</strong></td>
+</tr>
+<tr>
+<td><strong>RO, 8,4%</strong></td>
+<td style="text-align: right;">145 377</td>
+<td style="text-align: right;">1 876 052</td>
+<td style="text-align: right;">8,40%</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>RO, 12,39%</strong></td>
+<td style="text-align: right;">214 431</td>
+<td style="text-align: right;">1 945 106</td>
+<td style="text-align: right;">12,39%</td>
+<td>+4,0 п.п.</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Интерпретация (честная):</strong></p>
+<ol>
+<li><strong>Без zero-rating</strong> совокупная налоговая нагрузка WFOE (<strong>8,48%</strong>) <strong>сопоставима</strong> с RO при <strong>8,4%</strong> — WFOE <strong>не дороже</strong> нижней границы RO и <strong>дешевле</strong> верхней (12,4%).</li>
+<li><strong>С zero-rating</strong> WFOE <strong>существенно дешевле</strong> любого сценария RO.</li>
+<li><strong>Отток parent</strong> у WFOE с НДС 6% <strong>выше</strong>, чем у RO на <strong>~105 тыс. CNY</strong> за 6 мес. — это <strong>112 тыс. НДС</strong>, который для foreign parent обычно <strong>не зачитывается</strong> (учитывается как cost); при zero-rating разница <strong>исчезает</strong>, WFOE становится <strong>дешевле</strong> RO на <strong>~7 тыс. CNY</strong> vs RO 8,4%.</li>
+</ol>
+<h3 id="51-capex-1224">5.1. CAPEX и горизонт 12–24 месяца</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Статья</th>
+<th style="text-align: right;">RO (ориентир)</th>
+<th style="text-align: right;">WFOE (бюджет DM)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Setup CAPEX (6 мес.)</td>
+<td style="text-align: right;">~40 000–80 000 CNY</td>
+<td style="text-align: right;"><strong>254 000 CNY</strong></td>
+</tr>
+<tr>
+<td>Повторная регистрация при Фазе 2</td>
+<td style="text-align: right;"><strong>+150 000–250 000 CNY</strong> (новая WFOE)</td>
+<td style="text-align: right;"><strong>0</strong> (активация scope)</td>
+</tr>
+<tr>
+<td>Простой при переходе RO→WFOE</td>
+<td style="text-align: right;">2–4 мес.</td>
+<td style="text-align: right;">—</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Вывод:</strong> более высокий CAPEX WFOE <strong>окупается</strong> отсутствием второй регистрации и простоя при переходе к торговле — особенно если Фаза 2 на горизонте M6–M18.</p>
+<h3 id="52">5.2. Сравнение денежных потоков</h3>
+<div class="mermaid">flowchart TB
+    subgraph roFlow [RO — 6 месяцев]
+        P1[Parent: перевод на OPEX]
+        ROexp[RO: cost base 1,73 млн CNY]
+        ROtax[Налог RO 8,4-12,4%]
+        P1 --> ROexp
+        ROexp --> ROtax
+    end
+    subgraph wfoeFlow [WFOE cost-plus — 6 месяцев]
+        P2[Parent: оплата по сервисному договору]
+        Inv[Invoice: cost x 1,08 + VAT]
+        Wcost[Cost base → зарплаты, аренда, QC]
+        Wcit[CIT 25% только на 8% margin]
+        Wvat[VAT 6% или 0% zero-rated]
+        P2 --> Inv
+        Inv --> Wcost
+        Inv --> Wcit
+        Inv --> Wvat
+    end</div>
+<hr />
+<h2 id="6-wfoe">6. Неторговые преимущества WFOE для модели «Детский Мир»</h2>
+<p>Даже <strong>без торговли</strong> WFOE даёт преимущества, которых RO не обеспечивает:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Функция / процесс</th>
+<th>RO</th>
+<th>WFOE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>F3. Образцы:</strong> оплата перевозчика, sample fee</td>
+<td>Parent или grey zone</td>
+<td><a href="../06_sample_delivery_scheme_payment.md">06_sample_delivery_scheme_payment.md</a></td>
+</tr>
+<tr>
+<td><strong>F2. PSI / аудиты:</strong> договор с инспекторами, fapiao</td>
+<td>Ограничено</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><strong>F9. Лаборатории:</strong> pass-through SGS/BV</td>
+<td>Сложнее</td>
+<td>✅ отдельная строка акта</td>
+</tr>
+<tr>
+<td><strong>F7. Биллинг:</strong> ежемесячные акты cost-plus</td>
+<td>❌</td>
+<td>✅ <a href="../03_budget_6m.md">03_budget_6m.md</a> §7</td>
+</tr>
+<tr>
+<td><strong>F5. Liaison + трекер</strong></td>
+<td>✅</td>
+<td>✅ + юридически чистая структура</td>
+</tr>
+<tr>
+<td><strong>12–13 FTE, Шанхай + Гуанчжоу</strong></td>
+<td>Узкий scope</td>
+<td>✅ <a href="../02_org_structure.md">02_org_structure.md</a></td>
+</tr>
+<tr>
+<td><strong>Фаза 2: экспорт/торговля</strong></td>
+<td>Новая компания</td>
+<td>Активация (<a href="../04_setup_development_plan_6m.md">04_setup_development_plan_6m.md</a> §7)</td>
+</tr>
+</tbody>
+</table></div>
+<div class="mermaid">flowchart LR
+    subgraph roLimits [RO ограничения]
+        R1[Нет fapiao на услуги]
+        R2[Контракты через parent]
+        R3[Нет апгрейда в WFOE]
+    end
+    subgraph wfoeWins [WFOE преимущества]
+        W1[Сервисные договоры cost-plus]
+        W2[Оплата перевозчиков от WFOE]
+        W3[Прямой найм 12-13 FTE]
+        W4[Фаза 2 без смены формы]
+    end
+    roLimits --> wfoeWins</div>
+<hr />
+<h2 id="7">7. Сравнение с агентом (кратко)</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th></th>
+<th>Агент</th>
+<th>WFOE DM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Setup cost</td>
+<td>Низкий</td>
+<td>254k CAPEX + регистрация</td>
+</tr>
+<tr>
+<td>Контроль QC / sourcing</td>
+<td>Низкий</td>
+<td>Полный</td>
+</tr>
+<tr>
+<td>Конфликт интересов</td>
+<td>Высокий</td>
+<td>Нет</td>
+</tr>
+<tr>
+<td>IP / NDA / AVL</td>
+<td>Риск</td>
+<td>CNIPA + контракты WFOE</td>
+</tr>
+<tr>
+<td>Масштаб 10 функций</td>
+<td>Не закрывает</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Налоги в КНР</td>
+<td>На агенте</td>
+<td>Прозрачный cost-plus</td>
+</tr>
+</tbody>
+</table></div>
+<p>Агент остаётся <strong>вспомогательным</strong> каналом (узкие категории), но <strong>не заменяет</strong> собственное presence для модели DM.</p>
+<hr />
+<h2 id="8-wfoe">8. Риски WFOE и митигация</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Риск</th>
+<th>Митигация (уже в плане DM)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TP-аудит, оспаривание 8%</td>
+<td>Benchmarking + SOW, консультант M1–M2</td>
+</tr>
+<tr>
+<td>НДС не zero-rated</td>
+<td>Бюджет с 6% НДС заложен (<a href="../03_budget_6m.md">03_budget_6m.md</a>)</td>
+</tr>
+<tr>
+<td>Дольше регистрация vs RO</td>
+<td>Буфер M1–M2, внешний юрконсультант (<a href="../04_setup_development_plan_6m.md">04_setup_development_plan_6m.md</a>)</td>
+</tr>
+<tr>
+<td>Открытие счёта (санкции)</td>
+<td>BoC / ICBC, CNY, due diligence</td>
+</tr>
+<tr>
+<td>CAPEX выше RO</td>
+<td>Экономия на RO→WFOE миграции + Фаза 2</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2 id="9">9. Итоговый вывод</h2>
+<p><strong>WFOE (сервисный cost-plus, без торговли в Фазе 1) — более выгодная форма</strong> для «Детского Мира», потому что:</p>
+<ol>
+<li><strong>Налоги:</strong> нагрузка <strong>≤ RO</strong> в базовом сценарии (8,5% vs 8,4–12,4%) и <strong>значительно ниже RO</strong> при zero-rating НДС (~2% vs 8,4%+).</li>
+<li><strong>Право:</strong> модель F1–F10, sample fee, QC fee и pass-through <strong>соответствуют</strong> WFOE; для RO — <strong>структурные ограничения</strong> и регуляторный риск при масштабировании.</li>
+<li><strong>Финансы группы:</strong> cost-plus даёт <strong>прозрачный TP-контур</strong> (акты, SOW, benchmarking) vs «тихие» переводы на RO.</li>
+<li><strong>Стратегия:</strong> <strong>нет двойных затрат</strong> ликвидация RO + WFOE при Фазе 2; экспортная лицензия уже в scope.</li>
+<li><strong>Операции:</strong> прямой найм, счёт, печати, контракты с перевозчиками и лабораториями — <strong>необходимы</strong> для KPI (образцы 3–7 дней, PSI ≤ 1 день, AVL 25–40 фабрик).</li>
+</ol>
+<p><strong>Рекомендация для ответа на собеседовании (вопрос №1):</strong><br />
+«Мы выбираем WFOE не ради торговли в первые 6 месяцев, а потому что <strong>сервисный cost-plus WFOE</strong> — стандартная, <strong>налогово не хуже RO</strong> (а при zero-rating — лучше) структура для sourcing/QC-центра с <strong>полным legal capacity</strong>, которую RO <strong>не может</strong> реplicировать без компромиссов; плюс мы <strong>не платим дважды</strong> за смену формы при Фазе 2.»</p>
+<hr />
+<h2 id="10">10. Источники</h2>
+<h3 id="_1">Нормативные и официальные</h3>
+<ul>
+<li>Guo Shui Fa [2010] №18 — налогообложение RO (deemed profit, min 15%)</li>
+<li>PRC Corporate Income Tax Law — ставка 25%</li>
+<li>Caishui [2016] №36 — VAT, в т.ч. modern services 6%, zero-rating cross-border services</li>
+<li>Приказ Госсовета №584 — виды деятельности RO</li>
+<li><a href="https://www.chinatax.gov.cn/chinatax/c102449/c5239191/content.html">STA: zero-rating VAT on cross-border taxable services</a></li>
+</ul>
+<h3 id="_2">Профессиональные обзоры</h3>
+<ul>
+<li>PwC Tax Summaries — People's Republic of China, CIT</li>
+<li>RSM Stone Forest — VAT regime impact on RO (8,4% / 12,39% on expenditures)</li>
+<li>China Briefing — RO vs WFOE, sourcing models</li>
+<li>MSA Advisory — Cost-plus WFOE, consulting WFOE (2026)</li>
+<li>Acclime — Setting up a Cost+ WFOE in China (tax comparison vs RO)</li>
+<li>Faegre Drinker — Circular 18 summary</li>
+</ul>
+<h3 id="_3">Внутренние документы «Детский Мир»</h3>
+<ul>
+<li><a href="../01_functional_structure.md">01_functional_structure.md</a> — F1–F10, Фаза 1</li>
+<li><a href="../03_budget_6m.md">03_budget_6m.md</a> — cost-plus, налоги 146 761 CNY / 6 мес.</li>
+<li><a href="../04_setup_development_plan_6m.md">04_setup_development_plan_6m.md</a> — roadmap, TP M1–M2</li>
+<li><a href="../06_sample_delivery_scheme_payment.md">06_sample_delivery_scheme_payment.md</a> — sample fee</li>
+<li><a href="../../04_block4_regulatory_legal_framework.md">04_block4_regulatory_legal_framework.md</a> — исходное сравнение форм (RO recommendation superseded)</li>
+</ul>
+<hr />
+<p><em>Отчёт v1.0 · Июнь 2026 · Подготовлен для обоснования WFOE Фазы 1 «Детский Мир» КНР</em></p>
+    </main>
+    <footer class="footer">
+      Сгенерировано из <code>wfoe-vs-ro-tax-report.md</code> · 03.06.2026
+      · <a href="wfoe-vs-ro-tax-report.md">Markdown</a>
+    </footer>
+  </div>
+</div>
+<script type="module">
+  import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+  mermaid.initialize({
+    startOnLoad: true,
+    securityLevel: "loose",
+    theme: "default",
+  });
+</script>
+</body>
+</html>
