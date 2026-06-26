@@ -123,6 +123,4 @@ Payment fraud prevention sits at the intersection of mathematics, domain knowled
 
 I am ready to contribute to rule testing, fraud case analysis, back-testing efficiency assessments, and metric monitoring from day one — and to keep improving as Plata's product portfolio expands in 2026.
 
----
 
-*Resume prepared specifically for the Antifraud Analyst Middle position at Plata.*
