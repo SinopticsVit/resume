@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate DOCX from Antifraud_Analyst_Senior_Kurnosenko_EN.md."""
+"""Generate DOCX from Antifraud_Analyst_Senior_Kurnosenko_{EN,RU}.md."""
 
 import re
 from pathlib import Path
@@ -12,8 +12,10 @@ from docx.oxml.ns import qn
 from docx.shared import Cm, Pt, RGBColor
 
 HERE = Path(__file__).parent
-MD_FILE = HERE / "Antifraud_Analyst_Senior_Kurnosenko_EN.md"
-DOCX_FILE = HERE / "Antifraud_Analyst_Senior_Kurnosenko_EN.docx"
+RESUME_VARIANTS = (
+    ("Antifraud_Analyst_Senior_Kurnosenko_EN.md", "Antifraud_Analyst_Senior_Kurnosenko_EN.docx"),
+    ("Antifraud_Analyst_Senior_Kurnosenko_RU.md", "Antifraud_Analyst_Senior_Kurnosenko_RU.docx"),
+)
 
 NAVY = RGBColor(0x1F, 0x49, 0x7D)
 STEEL = RGBColor(0x2E, 0x50, 0x90)
@@ -192,5 +194,8 @@ def convert_md_to_docx(md_path: Path, docx_path: Path):
 
 
 if __name__ == "__main__":
-    convert_md_to_docx(MD_FILE, DOCX_FILE)
-    print(f"DOCX written: {DOCX_FILE}")
+    for md_name, docx_name in RESUME_VARIANTS:
+        md_path = HERE / md_name
+        docx_path = HERE / docx_name
+        convert_md_to_docx(md_path, docx_path)
+        print(f"DOCX written: {docx_path}")
