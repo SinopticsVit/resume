@@ -8,6 +8,7 @@ from generate_plata_risk_docx import convert_resume_md_to_docx
 HERE = Path(__file__).parent
 
 PAIRS = (
+    ("Analytics_Engineer_Kurnosenko_EN.md", "Analytics_Engineer_Kurnosenko_EN.docx"),
     ("Analytics_Engineer_DWH_Kurnosenko_EN.md", "Analytics_Engineer_DWH_Kurnosenko_EN.docx"),
     ("Analytics_Engineer_DWH_Kurnosenko_RU.md", "Analytics_Engineer_DWH_Kurnosenko_RU.docx"),
 )
